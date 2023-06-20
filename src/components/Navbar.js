@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Outlet, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   createStyles,
   Header,
@@ -8,15 +8,11 @@ import {
   Button,
   UnstyledButton,
   Text,
-  SimpleGrid,
   ThemeIcon,
-  Anchor,
   Divider,
-  Center,
   Box,
   Burger,
   Drawer,
-  Collapse,
   ScrollArea,
   rem,
 } from '@mantine/core';
@@ -29,8 +25,9 @@ import {
   IconChartPie3,
   IconFingerprint,
   IconCoin,
-  IconChevronDown,
 } from '@tabler/icons-react';
+
+import UserMenu from './User';
 
 const useStyles = createStyles((theme) => ({
   link: {
@@ -150,33 +147,32 @@ export default function Navbar() {
     drawerOpened,
     { toggle: toggleDrawer, close: closeDrawer },
   ] = useDisclosure(false);
-  const [linksOpened, { toggle: toggleLinks }] =
-    useDisclosure(false);
+
   const { classes, theme } = useStyles();
 
-  const links = mockdata.map((item) => (
-    <UnstyledButton
-      className={classes.subLink}
-      key={item.title}
-    >
-      <Group noWrap align='flex-start'>
-        <ThemeIcon size={34} variant='default' radius='md'>
-          <item.icon
-            size={rem(22)}
-            color={theme.fn.primaryColor()}
-          />
-        </ThemeIcon>
-        <div>
-          <Text size='sm' fw={500}>
-            {item.title}
-          </Text>
-          <Text size='xs' color='dimmed'>
-            {item.description}
-          </Text>
-        </div>
-      </Group>
-    </UnstyledButton>
-  ));
+  // const links = mockdata.map((item) => (
+  //   <UnstyledButton
+  //     className={classes.subLink}
+  //     key={item.title}
+  //   >
+  //     <Group noWrap align='flex-start'>
+  //       <ThemeIcon size={34} variant='default' radius='md'>
+  //         <item.icon
+  //           size={rem(22)}
+  //           color={theme.fn.primaryColor()}
+  //         />
+  //       </ThemeIcon>
+  //       <div>
+  //         <Text size='sm' fw={500}>
+  //           {item.title}
+  //         </Text>
+  //         <Text size='xs' color='dimmed'>
+  //           {item.description}
+  //         </Text>
+  //       </div>
+  //     </Group>
+  //   </UnstyledButton>
+  // ));
 
   return (
     <Box pb={120}>
@@ -192,9 +188,6 @@ export default function Navbar() {
             spacing={0}
             className={classes.hiddenMobile}
           >
-            {/* <a href='#' >
-              Home
-            </a> */}
             <NavLink className={classes.link} to='./home'>
               Home
             </NavLink>
@@ -205,7 +198,7 @@ export default function Navbar() {
               shadow='md'
               withinPortal
             >
-              <HoverCard.Target>
+              {/* <HoverCard.Target>
                 <a href='#' className={classes.link}>
                   <Center inline>
                     <Box component='span' mr={5}>
@@ -217,9 +210,9 @@ export default function Navbar() {
                     />
                   </Center>
                 </a>
-              </HoverCard.Target>
+              </HoverCard.Target> */}
 
-              <HoverCard.Dropdown
+              {/* <HoverCard.Dropdown
                 sx={{ overflow: 'hidden' }}
               >
                 <Group position='apart' px='md'>
@@ -259,20 +252,21 @@ export default function Navbar() {
                     </Button>
                   </Group>
                 </div>
-              </HoverCard.Dropdown>
+              </HoverCard.Dropdown> */}
             </HoverCard>
-            {/* <a href='#' className={classes.link}>
-            
-            </a> */}
+
             <NavLink
               className={classes.link}
               to='./products'
             >
               Producut
             </NavLink>
-            <a href='#' className={classes.link}>
+            {/* <a href='#' className={classes.link}>
               Academy
-            </a>
+            </a> */}
+            <NavLink className={classes.link} to='./card'>
+              Card
+            </NavLink>
           </Group>
 
           <Group className={classes.hiddenMobile}>
@@ -280,6 +274,7 @@ export default function Navbar() {
             <NavLink to='./login'>
               <Button>Sign up</Button>
             </NavLink>
+            <UserMenu />
           </Group>
 
           <Burger
@@ -312,7 +307,7 @@ export default function Navbar() {
           <NavLink className={classes.link} to='./home'>
             Home
           </NavLink>
-          <UnstyledButton
+          {/* <UnstyledButton
             className={classes.link}
             onClick={toggleLinks}
           >
@@ -325,15 +320,17 @@ export default function Navbar() {
                 color={theme.fn.primaryColor()}
               />
             </Center>
-          </UnstyledButton>
-          <Collapse in={linksOpened}>{links}</Collapse>
+          </UnstyledButton> */}
+          {/* <Collapse in={linksOpened}>{links}</Collapse> */}
           <NavLink className={classes.link} to='./products'>
             Producut
           </NavLink>
-          <a href='#' className={classes.link}>
+          {/* <a href='#' className={classes.link}>
             Academy
-          </a>
-
+          </a> */}
+          <NavLink className={classes.link} to='./card'>
+            Card
+          </NavLink>
           <Divider
             my='sm'
             color={

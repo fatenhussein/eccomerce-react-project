@@ -85,31 +85,21 @@ export function FeaturesCard() {
               Free recharge at any station
             </Text>
           </div>
-          <Badge variant='outline'>25% off</Badge>
         </Group>
 
-        <Card.Section className={classes.section}>
-          <Group spacing={30}>
-            <div>
-              <Text fz='xl' fw={700} sx={{ lineHeight: 1 }}>
-                $168.00
-              </Text>
-              <Text
-                fz='sm'
-                c='dimmed'
-                fw={500}
-                sx={{ lineHeight: 1 }}
-                mt={3}
-              >
-                per day
-              </Text>
-            </div>
-
-            <Button radius='xl' style={{ flex: 1 }}>
-              Add to Card
-            </Button>
-          </Group>
-        </Card.Section>
+        <Group spacing={30} mt={20}>
+          <div>
+            <Text fz='xl' fw={700} sx={{ lineHeight: 1 }}>
+              $168.00
+            </Text>
+          </div>
+          <Button radius='xl' style={{ flex: 1 }}>
+            Add to Card
+          </Button>
+        </Group>
+        {/* <Card.Section
+          className={classes.section}
+        ></Card.Section> */}
       </Card>
     </>
   );
@@ -119,18 +109,21 @@ export function FeaturesCard() {
 //   <Skeleton height={height} radius='md' animate={false} />
 // );
 // const BASE_HEIGHT = 360;
+// const getSubHeight = (children: number, spacing: number) =>
+//   BASE_HEIGHT / children -
+//   spacing * ((children - 1) / children);
 
 export default function Subgrid() {
   return (
     <Container my='md'>
       <SimpleGrid
         cols={4}
-        breakpoints={[{ maxWidth: 'xs', cols: 1 }]}
+        breakpoints={[
+          { maxWidth: 'xs', cols: 1 },
+          { maxWidth: 'sm', cols: 2 },
+        ]}
       >
-        {/* {getChild(BASE_HEIGHT)} */}
-        <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
+        {/* {getChild(FeaturesCard)} */}
         <FeaturesCard />
         <FeaturesCard />
         <FeaturesCard />

@@ -13,17 +13,20 @@ import Footer from './components/Footer';
 import Producut from './components/Producut';
 import Login from './components/Login';
 import NoPage from './components/NoPage';
+import Card from './components/Card';
 
 export default function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <BrowserRouter>
         <Navbar />
+
         <Routes>
           <Route>
             <Route path='home' element={<Landing />} />
             <Route path='login' element={<Login />} />
             <Route path='products' element={<Producut />} />
+            <Route path='card' element={<Card />} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>

@@ -17,7 +17,7 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     paddingTop: `calc(${theme.spacing.xl} )`,
-    paddingBottom: `calc(${theme.spacing.xl}* 3)`,
+    paddingBottom: `calc(${theme.spacing.xl} 3)`,
   },
 
   content: {
