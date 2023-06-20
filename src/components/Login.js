@@ -6,17 +6,12 @@ import {
   Text,
   Paper,
   Group,
-  PaperProps,
   Button,
   Divider,
   Checkbox,
   Anchor,
   Stack,
 } from '@mantine/core';
-// import {
-//   GoogleButton,
-//   TwitterButton,
-// } from '../SocialButtons/SocialButtons';
 
 import '../../src/App.css';
 
@@ -45,12 +40,6 @@ export default function AuthenticationForm() {
       <Text size='lg' weight={500}>
         Welcome to Mantine, {type} with
       </Text>
-
-      {/* <Group grow mb='md' mt='md'>
-        <GoogleButton radius='xl'>Google</GoogleButton>
-        <TwitterButton radius='xl'>Twitter</TwitterButton>
-      </Group> */}
-
       <Divider
         label='Or continue with email'
         labelPosition='center'
