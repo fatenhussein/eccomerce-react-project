@@ -57,6 +57,7 @@ export default function Cards() {
 
   return (
     <ScrollArea className='card'>
+      <h1>😢</h1>
       <Table sx={{ minWidth: 800 }} verticalSpacing='sm'>
         <thead>
           <tr>

@@ -3,7 +3,6 @@ import {
   Group,
   Text,
   Avatar,
-  useMantineTheme,
   ActionIcon,
 } from '@mantine/core';
 import {

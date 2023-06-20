@@ -124,7 +124,7 @@ export default function HeroBullets() {
                 size='md'
                 className={classes.control}
               >
-                Get started
+                SHOP NOW
               </Button>
               <Button
                 variant='default'

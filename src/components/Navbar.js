@@ -144,9 +144,9 @@ export default function Navbar() {
       <Header height={60} px='md'>
         <Group position='apart' sx={{ height: '100%' }}>
           {/* <MantineLogo size={30} /> */}
-          <NavLink className={classes.link} to='./home'>
-            <h2>Logo</h2>
-          </NavLink>
+          {/* <NavLink className={classes.link} to='./home'> */}
+          <p>Logo</p>
+          {/* </NavLink> */}
 
           <Group
             sx={{ height: '100%' }}
@@ -173,7 +173,7 @@ export default function Navbar() {
           </Group>
 
           <Group className={classes.hiddenMobile}>
-            <Button variant='default'>Log in</Button>
+            {/* <Button variant='default'>Log in</Button> */}
             <NavLink to='./login'>
               <Button>Sign up</Button>
             </NavLink>
@@ -229,7 +229,7 @@ export default function Navbar() {
           />
 
           <Group position='center' grow pb='xl' px='md'>
-            <Button variant='default'>Log in</Button>
+            {/* <Button variant='default'>Log in</Button> */}
             <NavLink to='./login'>
               <Button>Sign up</Button>
             </NavLink>
