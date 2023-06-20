@@ -1,0 +1,72 @@
+  {"users": [
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "address": "123 Main Street"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "password": "secretword",
+    "address": "456 Elm Avenue"
+  },
+  {
+    "id": 3,
+    "name": "Robert Johnson",
+    "email": "robert@example.com",
+    "password": "12345678",
+    "address": "789 Oak Road"
+  },
+  {
+    "id": 4,
+    "name": "Sarah Williams",
+    "email": "sarah@example.com",
+    "password": "pass1234",
+    "address": "987 Pine Lane"
+  },
+  {
+    "id": 5,
+    "name": "Michael Brown",
+    "email": "michael@example.com",
+    "password": "abcxyz",
+    "address": "654 Cedar Street"
+  },
+  {
+    "id": 6,
+    "name": "Emily Davis",
+    "email": "emily@example.com",
+    "password": "qwerty",
+    "address": "321 Walnut Avenue"
+  },
+  {
+    "id": 7,
+    "name": "David Wilson",
+    "email": "david@example.com",
+    "password": "ilovedogs",
+    "address": "789 Maple Drive"
+  },
+  {
+    "id": 8,
+    "name": "Jennifer Taylor",
+    "email": "jennifer@example.com",
+    "password": "password456",
+    "address": "123 Oak Street"
+  },
+  {
+    "id": 9,
+    "name": "Andrew Anderson",
+    "email": "andrew@example.com",
+    "password": "987654321",
+    "address": "456 Elm Road"
+  },
+  {
+    "id": 10,
+    "name": "Jessica Clark",
+    "email": "jessica@example.com",
+    "password": "mypassword",
+    "address": "789 Pine Avenue"
+  }
+]}
