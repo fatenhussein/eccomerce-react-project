@@ -8,15 +8,10 @@ import {
 } from '@mantine/core';
 import {
   IconLogout,
-  IconHeart,
-  IconStar,
-  IconMessage,
   IconChevronRight,
-  IconDots,
 } from '@tabler/icons-react';
-
+import { IconSettings } from '@tabler/icons-react';
 export default function UserMenu() {
-  const theme = useMantineTheme();
   return (
     <Group position='center'>
       <Menu
@@ -28,14 +23,18 @@ export default function UserMenu() {
       >
         <Menu.Target>
           <ActionIcon>
-            <IconDots size='1rem' stroke={1.5} />
+            <IconSettings
+              size='1.5rem'
+              stroke={2}
+              color='#333'
+            />
           </ActionIcon>
         </Menu.Target>
         <Menu.Dropdown>
           <Menu.Item
             rightSection={
               <IconChevronRight
-                size='0.9rem'
+                size='1.2rem'
                 stroke={1.5}
               />
             }
@@ -43,13 +42,13 @@ export default function UserMenu() {
             <Group>
               <Avatar
                 radius='xl'
-                src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80'
+                src='https://media.licdn.com/dms/image/D4E03AQFywHStX074DQ/profile-displayphoto-shrink_400_400/0/1676303770403?e=1692835200&v=beta&t=qeTgniS2wt2iWGKlh8HY-qZYOa87BDrIguF4pr3pYVw'
               />
 
               <div>
-                <Text weight={500}>Nancy Eggshacker</Text>
+                <Text weight={500}>Faten Hussein </Text>
                 <Text size='xs' color='dimmed'>
-                  neggshaker@mantine.dev
+                  faten@gmail.com
                 </Text>
               </div>
             </Group>
@@ -57,7 +56,7 @@ export default function UserMenu() {
 
           <Menu.Divider />
 
-          <Menu.Item
+          {/* <Menu.Item
             icon={
               <IconHeart
                 size='0.9rem'
@@ -78,8 +77,8 @@ export default function UserMenu() {
             }
           >
             Saved posts
-          </Menu.Item>
-          <Menu.Item
+          </Menu.Item> */}
+          {/* <Menu.Item
             icon={
               <IconMessage
                 size='0.9rem'
@@ -89,7 +88,7 @@ export default function UserMenu() {
             }
           >
             Your comments
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Label>Settings</Menu.Label>
 
           <Menu.Item
