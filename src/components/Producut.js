@@ -3,18 +3,12 @@ import {
   Image,
   Text,
   Group,
-  Badge,
   createStyles,
   Button,
   rem,
 } from '@mantine/core';
 
-import {
-  SimpleGrid,
-  Skeleton,
-  Container,
-  Stack,
-} from '@mantine/core';
+import { SimpleGrid, Container } from '@mantine/core';
 
 import '../../src/App.css';
 
@@ -105,17 +99,10 @@ export function FeaturesCard() {
   );
 }
 
-// const getChild = (height) => (
-//   <Skeleton height={height} radius='md' animate={false} />
-// );
-// const BASE_HEIGHT = 360;
-// const getSubHeight = (children: number, spacing: number) =>
-//   BASE_HEIGHT / children -
-//   spacing * ((children - 1) / children);
-
 export default function Subgrid() {
   return (
     <Container my='md'>
+      <h1> lalalalalalalalala</h1>
       <SimpleGrid
         cols={4}
         breakpoints={[
@@ -123,7 +110,6 @@ export default function Subgrid() {
           { maxWidth: 'sm', cols: 2 },
         ]}
       >
-        {/* {getChild(FeaturesCard)} */}
         <FeaturesCard />
         <FeaturesCard />
         <FeaturesCard />

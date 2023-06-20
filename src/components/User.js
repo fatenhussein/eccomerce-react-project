@@ -11,10 +11,6 @@ import {
   IconHeart,
   IconStar,
   IconMessage,
-  IconSettings,
-  IconPlayerPause,
-  IconTrash,
-  IconSwitchHorizontal,
   IconChevronRight,
   IconDots,
 } from '@tabler/icons-react';
@@ -94,47 +90,13 @@ export default function UserMenu() {
           >
             Your comments
           </Menu.Item>
-
           <Menu.Label>Settings</Menu.Label>
-          {/* <Menu.Item
-            icon={
-              <IconSettings size='0.9rem' stroke={1.5} />
-            }
-          >
-            Account settings
-          </Menu.Item> */}
-          {/* <Menu.Item
-            icon={
-              <IconSwitchHorizontal
-                size='0.9rem'
-                stroke={1.5}
-              />
-            }
-          >
-            Change account
-          </Menu.Item> */}
+
           <Menu.Item
             icon={<IconLogout size='0.9rem' stroke={1.5} />}
           >
             Logout
           </Menu.Item>
-
-          {/* <Menu.Divider /> */}
-
-          {/* <Menu.Label>Danger zone</Menu.Label> */}
-          {/* <Menu.Item
-            icon={
-              <IconPlayerPause size='0.9rem' stroke={1.5} />
-            }
-          >
-            Pause subscription
-          </Menu.Item>
-          <Menu.Item
-            color='red'
-            icon={<IconTrash size='0.9rem' stroke={1.5} />}
-          >
-            Delete account
-          </Menu.Item> */}
         </Menu.Dropdown>
       </Menu>
     </Group>
