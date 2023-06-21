@@ -17,17 +17,23 @@ import {
 } from "@mantine/core";
 
 import "../../src/App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, json, useNavigate } from "react-router-dom";
 
 export default function AuthenticationForm() {
   const navigate = useNavigate();
+  const [currentUser , setCurrentUser ] =useState("");
+  // const currentUser = localStorage.getItem("currentUser");
 
+
+  
+ 
+  const apiUrl = "http://localhost:3500/users";
   let users;
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:3500/users");
+        const response = await axios.get(apiUrl);
         users = response.data;
         localStorage.setItem("users", JSON.stringify(users));
       } catch (error) {
@@ -35,6 +41,7 @@ export default function AuthenticationForm() {
       }
     }
     fetchData();
+   
   }, []);
 
   const [type, toggle] = useToggle(["login", "register"]);
@@ -44,6 +51,7 @@ export default function AuthenticationForm() {
       name: "",
       password: "",
       terms: true,
+      address: "",
     },
 
     validate: {
@@ -63,26 +71,57 @@ export default function AuthenticationForm() {
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form
-     
         onSubmit={form.onSubmit((e) => {
-          if(type==="login"){  const users = JSON.parse(localStorage.getItem('users'))
+          const users = JSON.parse(localStorage.getItem("users"));
 
-          let foundUser = false
+          if (type === "login") {
+            let foundUser = false;
 
-          users.forEach((user) => {
-            if (
-              user.email === form.values.email &&
-              user.password === form.values.password
-            ) {
-              foundUser = true
-              navigate('/')
+            users.forEach((user) => {
+              if (
+                user.email === form.values.email &&
+                user.password === form.values.password
+              ) {
+                localStorage.setItem("currentUser", JSON.stringify(user));
+               setCurrentUser(user);
+                foundUser = true;
+                navigate("/");
+              }
+            });
+
+            if (!foundUser) {
+              console.log("Invalid credentials");
             }
-          })
+          }
 
-          if (!foundUser) {
-            console.log('Invalid credentials')
-          }}
-        
+          if (type === "register") {
+            let foundUser = false;
+            const newUser = {
+              email: form.values.email,
+              name: form.values.name,
+              password: form.values.password,
+              address: form.values.address,
+              terms: true,
+            };
+            users.forEach((user) => {
+              if (user.email === form.values.email) {
+                alert("aleady register");
+                foundUser = true;
+              }
+            });
+            if (!foundUser) {
+              axios
+                .post(apiUrl, newUser)
+                .then((response) => {
+                  const users = response.data;
+                  localStorage.setItem("users", JSON.stringify(users));
+                })
+                .catch((error) => {
+                  console.error("An error occurred:", error.response.data);
+                });
+              navigate("/");
+            }
+          }
         })}
       >
         <Stack>
@@ -90,15 +129,14 @@ export default function AuthenticationForm() {
             <TextInput
               label="Name"
               placeholder="Your name"
-              value={
-                form.values.name}
+              value={form.values.name}
               onChange={(event) =>
                 form.setFieldValue("name", event.currentTarget.value)
               }
               radius="md"
             />
           )}
-
+            
           <TextInput
             required
             label="Email"
@@ -114,6 +152,10 @@ export default function AuthenticationForm() {
             <TextInput
               label="Shipping address"
               placeholder="15329 Huston 21st"
+              value={form.values.address}
+              onChange={(event) =>
+                form.setFieldValue("address", event.currentTarget.value)
+              }
             />
           )}
 
