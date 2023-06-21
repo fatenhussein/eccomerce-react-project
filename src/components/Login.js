@@ -40,7 +40,7 @@ export default function AuthenticationForm() {
 
 
 
-  
+
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
@@ -67,34 +67,35 @@ export default function AuthenticationForm() {
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form
+     
         onSubmit={form.onSubmit((e) => {
-          const users = JSON.parse(localStorage.getItem("users"));
+          if(type==="login"){  const users = JSON.parse(localStorage.getItem('users'))
 
-          let foundUser = false;
+          let foundUser = false
 
           users.forEach((user) => {
             if (
               user.email === form.values.email &&
               user.password === form.values.password
             ) {
-              foundUser = true;
-              navigate("/");
+              foundUser = true
+              navigate('/')
             }
-          });
+          })
 
           if (!foundUser) {
-          
-            console.log("Invalid credentials");
-          }
+            console.log('Invalid credentials')
+          }}
         
         })}
-      >
+      />
         <Stack>
           {type === "register" && (
             <TextInput
               label="Name"
               placeholder="Your name"
-              value={form.values.name}
+              value={
+                form.values.name}
               onChange={(event) =>
                 form.setFieldValue("name", event.currentTarget.value)
               }
