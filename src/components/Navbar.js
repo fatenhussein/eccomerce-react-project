@@ -177,9 +177,11 @@ export default function Navbar({
 
           <Group className={classes.hiddenMobile}>
             {/* <Button variant='default'>Log in</Button> */}
-            <NavLink to='./login'>
-              <Button>Sign up</Button>
-            </NavLink>
+            {!isShowIcon && (
+              <NavLink to='./login'>
+                <Button>Sign up</Button>
+              </NavLink>
+            )}
             <NavLink className={classes.link} to='./card'>
               {/* <IconBasketFilled /> */}
 
@@ -242,7 +244,7 @@ export default function Navbar({
             <NavLink className={classes.link} to='./card'>
               {/* <IconBasketFilled /> */}
             </NavLink>
-            <IconBasketOff />
+            {isShowIcon && <IconBasketOff />}
             {isShowIcon && <UserMenu />}
           </Group>
         </ScrollArea>
