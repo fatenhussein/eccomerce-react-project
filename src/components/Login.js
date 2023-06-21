@@ -1,6 +1,6 @@
 import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
-
+import { useState } from "react";
 import axios from "axios";
 
 import {
@@ -15,6 +15,7 @@ import {
   Anchor,
   Stack,
 } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 
 import "../../src/App.css";
 import { useEffect } from "react";
@@ -37,12 +38,13 @@ export default function AuthenticationForm() {
     fetchData();
   }, []);
 
+  const [isShowAlert, setIsShowAlert] = useState(false);
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
-      email: "",
+      email: "john@example.com",
       name: "",
-      password: "",
+      password: "password123",
       terms: true,
     },
 
@@ -63,26 +65,29 @@ export default function AuthenticationForm() {
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form
-     
+        onChange={() => setIsShowAlert(false)}
         onSubmit={form.onSubmit((e) => {
-          if(type==="login"){  const users = JSON.parse(localStorage.getItem('users'))
+          const users = JSON.parse(localStorage.getItem("users"));
 
-          let foundUser = false
+          let foundUser = false;
 
           users.forEach((user) => {
             if (
               user.email === form.values.email &&
               user.password === form.values.password
             ) {
-              foundUser = true
-              navigate('/')
+              foundUser = true;
+              navigate("/");
             }
-          })
+          });
 
           if (!foundUser) {
-            console.log('Invalid credentials')
-          }}
-        
+            // notifications.show({
+            //   message: "Please provide a valid email",
+            //   color: "red",
+            // });
+            setIsShowAlert(true);
+          }
         })}
       >
         <Stack>
@@ -90,8 +95,7 @@ export default function AuthenticationForm() {
             <TextInput
               label="Name"
               placeholder="Your name"
-              value={
-                form.values.name}
+              value={form.values.name}
               onChange={(event) =>
                 form.setFieldValue("name", event.currentTarget.value)
               }
@@ -131,6 +135,7 @@ export default function AuthenticationForm() {
             }
             radius="md"
           />
+          {isShowAlert && <label>😢</label>}
 
           {type === "register" && (
             <Checkbox
