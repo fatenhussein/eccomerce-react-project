@@ -131,7 +131,10 @@ const useStyles = createStyles((theme) => ({
 //   },
 // ];
 
-export default function Navbar() {
+export default function Navbar({
+  setIsShowIcon,
+  isShowIcon,
+}) {
   const [
     drawerOpened,
     { toggle: toggleDrawer, close: closeDrawer },
@@ -179,9 +182,12 @@ export default function Navbar() {
             </NavLink>
             <NavLink className={classes.link} to='./card'>
               {/* <IconBasketFilled /> */}
-              <IconBasketOff />
+
+              {isShowIcon && <IconBasketOff />}
             </NavLink>
-            <UserMenu />
+            {isShowIcon && (
+              <UserMenu setIsShowIcon={setIsShowIcon} />
+            )}
           </Group>
 
           <Burger
@@ -237,7 +243,7 @@ export default function Navbar() {
               {/* <IconBasketFilled /> */}
             </NavLink>
             <IconBasketOff />
-            <UserMenu />
+            {isShowIcon && <UserMenu />}
           </Group>
         </ScrollArea>
       </Drawer>
