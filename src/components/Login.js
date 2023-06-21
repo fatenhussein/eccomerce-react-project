@@ -37,10 +37,6 @@ export default function AuthenticationForm() {
     fetchData();
   }, []);
 
-
-
-
-
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
@@ -88,7 +84,7 @@ export default function AuthenticationForm() {
           }}
         
         })}
-      />
+      >
         <Stack>
           {type === "register" && (
             <TextInput
