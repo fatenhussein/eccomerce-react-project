@@ -13,9 +13,6 @@ import Card from "./components/Card";
 import { useEffect } from "react";
 import axios from "axios";
 
-
-
-
 export default function App() {
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>

@@ -37,6 +37,10 @@ export default function AuthenticationForm() {
     fetchData();
   }, []);
 
+
+
+
+  
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
@@ -79,8 +83,10 @@ export default function AuthenticationForm() {
           });
 
           if (!foundUser) {
+          
             console.log("Invalid credentials");
           }
+        
         })}
       >
         <Stack>

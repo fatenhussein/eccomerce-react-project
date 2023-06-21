@@ -9,13 +9,13 @@ import {
   List,
   ThemeIcon,
   rem,
-} from '@mantine/core';
-import { IconCheck } from '@tabler/icons-react';
+} from "@mantine/core";
+import { IconCheck } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   inner: {
-    display: 'flex',
-    justifyContent: 'space-between',
+    display: "flex",
+    justifyContent: "space-between",
     paddingTop: `calc(${theme.spacing.xl} )`,
     paddingBottom: `calc(${theme.spacing.xl} 3)`,
   },
@@ -24,29 +24,26 @@ const useStyles = createStyles((theme) => ({
     maxWidth: rem(480),
     marginRight: `calc(${theme.spacing.xl} * 3)`,
 
-    [theme.fn.smallerThan('md')]: {
-      maxWidth: '100%',
+    [theme.fn.smallerThan("md")]: {
+      maxWidth: "100%",
       marginRight: 0,
     },
   },
 
   title: {
-    color:
-      theme.colorScheme === 'dark'
-        ? theme.white
-        : theme.black,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontSize: rem(44),
     lineHeight: 1.2,
     fontWeight: 900,
 
-    [theme.fn.smallerThan('xs')]: {
+    [theme.fn.smallerThan("xs")]: {
       fontSize: rem(28),
     },
   },
 
   control: {
-    [theme.fn.smallerThan('xs')]: {
+    [theme.fn.smallerThan("xs")]: {
       flex: 1,
     },
   },
@@ -54,15 +51,15 @@ const useStyles = createStyles((theme) => ({
   image: {
     flex: 1,
 
-    [theme.fn.smallerThan('md')]: {
-      display: 'none',
+    [theme.fn.smallerThan("md")]: {
+      display: "none",
     },
   },
 
   highlight: {
-    position: 'relative',
+    position: "relative",
     backgroundColor: theme.fn.variant({
-      variant: 'light',
+      variant: "light",
       color: theme.primaryColor,
     }).background,
     borderRadius: theme.radius.sm,
@@ -78,58 +75,47 @@ export default function HeroBullets() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              A{' '}
-              <span className={classes.highlight}>
-                modern
-              </span>{' '}
-              React <br /> components library
+              A <span className={classes.highlight}>modern</span> React <br />{" "}
+              components library
             </Title>
-            <Text color='dimmed' mt='md'>
-              Build fully functional accessible web
-              applications faster than ever – Mantine
-              includes more than 120 customizable components
-              and hooks to cover you in any situation
+            <Text color="dimmed" mt="md">
+              Build fully functional accessible web applications faster than
+              ever – Mantine includes more than 120 customizable components and
+              hooks to cover you in any situation
             </Text>
 
             <List
               mt={30}
-              spacing='sm'
-              size='sm'
+              spacing="sm"
+              size="sm"
               icon={
-                <ThemeIcon size={20} radius='xl'>
+                <ThemeIcon size={20} radius="xl">
                   <IconCheck size={rem(12)} stroke={1.5} />
                 </ThemeIcon>
               }
             >
               <List.Item>
-                <b>TypeScript based</b> – build type safe
-                applications, all components and hooks
-                export types
+                <b>TypeScript based</b> – build type safe applications, all
+                components and hooks export types
               </List.Item>
               <List.Item>
-                <b>Free and open source</b> – all packages
-                have MIT license, you can use Mantine in any
-                project
+                <b>Free and open source</b> – all packages have MIT license, you
+                can use Mantine in any project
               </List.Item>
               <List.Item>
-                <b>No annoying focus ring</b> – focus ring
-                will appear only when user navigates with
-                keyboard
+                <b>No annoying focus ring</b> – focus ring will appear only when
+                user navigates with keyboard
               </List.Item>
             </List>
 
             <Group mt={30}>
-              <Button
-                radius='xl'
-                size='md'
-                className={classes.control}
-              >
+              <Button radius="xl" size="md" className={classes.control}>
                 SHOP NOW
               </Button>
               <Button
-                variant='default'
-                radius='xl'
-                size='md'
+                variant="default"
+                radius="xl"
+                size="md"
                 className={classes.control}
               >
                 Source code
@@ -137,7 +123,7 @@ export default function HeroBullets() {
             </Group>
           </div>
           <Image
-            src='https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg'
+            src="https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg"
             className={classes.image}
           />
         </div>
