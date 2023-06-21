@@ -7,8 +7,9 @@ import {
   Button,
   rem,
 } from '@mantine/core';
-
 import { SimpleGrid, Container } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import '../../src/App.css';
 
@@ -19,7 +20,6 @@ const useStyles = createStyles((theme) => ({
         ? theme.colors.dark[7]
         : theme.white,
   },
-
   imageSection: {
     padding: theme.spacing.md,
     display: 'flex',
@@ -31,7 +31,6 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[3]
     }`,
   },
-
   label: {
     marginBottom: theme.spacing.xs,
     lineHeight: 1,
@@ -40,7 +39,6 @@ const useStyles = createStyles((theme) => ({
     letterSpacing: rem(-0.25),
     textTransform: 'uppercase',
   },
-
   section: {
     padding: theme.spacing.md,
     borderTop: `${rem(1)} solid ${
@@ -49,7 +47,6 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[3]
     }`,
   },
-
   icon: {
     marginRight: rem(5),
     color:
@@ -59,50 +56,56 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function FeaturesCard() {
+export function FeaturesCard({ product }) {
   const { classes } = useStyles();
 
   return (
-    <>
-      <Card withBorder radius='md' className='producut'>
-        <Card.Section className={classes.imageSection}>
-          <Image
-            src='https://i.imgur.com/ZL52Q2D.png'
-            alt='Tesla Model S'
-          />
-        </Card.Section>
+    <Card withBorder radius='md' className='product'>
+      <Card.Section className={classes.imageSection}>
+        <Image src={product.image} alt={product.title} />
+      </Card.Section>
 
-        <Group position='apart' mt='md'>
-          <div>
-            <Text fw={500}>Tesla Model S</Text>
-            <Text fz='xs' c='dimmed'>
-              Free recharge at any station
-            </Text>
-          </div>
-        </Group>
+      <Group position='apart' mt='md'>
+        <div>
+          <Text fw={500}>{product.title}</Text>
+          <Text fz='xs' c='dimmed'>
+            {product.description}
+          </Text>
+        </div>
+      </Group>
 
-        <Group spacing={30} mt={20}>
-          <div>
-            <Text fz='xl' fw={700} sx={{ lineHeight: 1 }}>
-              $168.00
-            </Text>
-          </div>
-          <Button radius='xl' style={{ flex: 1 }}>
-            Add to Card
-          </Button>
-        </Group>
-        {/* <Card.Section
-          className={classes.section}
-        ></Card.Section> */}
-      </Card>
-    </>
+      <Group spacing={30} mt={20}>
+        <div>
+          <Text fz='xl' fw={700} sx={{ lineHeight: 1 }}>
+            ${product.price}
+          </Text>
+        </div>
+        <Button  radius='xl' style={{ flex: 1 }}>
+          Add to Cart
+         
+        </Button>
+      </Group>
+    </Card>
   );
 }
 
 export default function Subgrid() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://fakestoreapi.com/products')
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error('Error retrieving product data:', error);
+      });
+  }, []);
+
   return (
     <Container my='md'>
-      <h1> lalalalalalalalala</h1>
+      <h1>Shop here </h1>
       <SimpleGrid
         cols={4}
         breakpoints={[
@@ -110,14 +113,13 @@ export default function Subgrid() {
           { maxWidth: 'sm', cols: 2 },
         ]}
       >
-        <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
-        <FeaturesCard />
+        {products.map((product) => (
+       
+          <FeaturesCard key={product.id} product={product} />
+        ))}
       </SimpleGrid>
     </Container>
   );
 }
+
+//khsdhkgusdkugggit 

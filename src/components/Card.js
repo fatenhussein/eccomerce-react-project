@@ -20,7 +20,7 @@ const data = {
   ],
 };
 
-export default function Cards() {
+export default function Cards(handelClick) {
   const rows = data.data.map((item) => (
     <tr key={item.item}>
       <td>
