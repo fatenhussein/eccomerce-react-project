@@ -10,7 +10,17 @@ import {
   IconChevronRight,
 } from '@tabler/icons-react';
 import { IconSettings } from '@tabler/icons-react';
+import {useState , useEffect } from 'react'
+import { useNavigate} from 'react-router-dom'
 export default function UserMenu() {
+  const navigate = useNavigate();
+   const [currentUser, setCurrentUser] = useState("");
+
+   useEffect(() => {
+    setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
+  },[]);
+
+ 
   return (
     <Group position='center'>
       <Menu
@@ -44,12 +54,14 @@ export default function UserMenu() {
                 src='https://media.licdn.com/dms/image/D4E03AQFywHStX074DQ/profile-displayphoto-shrink_400_400/0/1676303770403?e=1692835200&v=beta&t=qeTgniS2wt2iWGKlh8HY-qZYOa87BDrIguF4pr3pYVw'
               />
 
-              <div>
-                <Text weight={500}>Faten Hussein </Text>
+              {
+                currentUser && <div>
+                <Text weight={500}>{currentUser.name}</Text>
                 <Text size='xs' color='dimmed'>
-                  faten@gmail.com
+                {currentUser.email}
                 </Text>
               </div>
+              }
             </Group>
           </Menu.Item>
 
@@ -92,6 +104,14 @@ export default function UserMenu() {
 
           <Menu.Item
             icon={<IconLogout size='0.9rem' stroke={1.5} />}
+            onClick={()=>{
+            
+              localStorage.removeItem("currentUser");
+          
+             navigate("/login");
+
+
+            }}
           >
             Logout
           </Menu.Item>

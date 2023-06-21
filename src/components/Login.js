@@ -22,7 +22,7 @@ import { Navigate, json, useNavigate } from "react-router-dom";
 
 export default function AuthenticationForm() {
   const navigate = useNavigate();
-  const [currentUser, setCurrentUser] = useState("");
+ // const [currentUser, setCurrentUser] = useState("");
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [isExist, setIsisExist] = useState(false);
   // const currentUser = localStorage.getItem("currentUser");
@@ -85,7 +85,7 @@ export default function AuthenticationForm() {
                 user.password === form.values.password
               ) {
                 localStorage.setItem("currentUser", JSON.stringify(user));
-                setCurrentUser(user);
+              //  setCurrentUser(user);
                 foundUser = true;
                 navigate("/");
               }
