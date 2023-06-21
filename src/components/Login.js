@@ -1,6 +1,6 @@
 import { useToggle, upperFirst } from "@mantine/hooks";
 import { useForm } from "@mantine/form";
-import { useState } from "react";
+
 import axios from "axios";
 
 import {
@@ -15,20 +15,24 @@ import {
   Anchor,
   Stack,
 } from "@mantine/core";
-import { notifications } from "@mantine/notifications";
 
 import "../../src/App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, json, useNavigate } from "react-router-dom";
 
 export default function AuthenticationForm() {
   const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = useState("");
+  const [isShowAlert, setIsShowAlert] = useState(false);
+  const [isExist, setIsisExist] = useState(false);
+  // const currentUser = localStorage.getItem("currentUser");
 
+  const apiUrl = "http://localhost:3500/users";
   let users;
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:3500/users");
+        const response = await axios.get(apiUrl);
         users = response.data;
         localStorage.setItem("users", JSON.stringify(users));
       } catch (error) {
@@ -38,14 +42,14 @@ export default function AuthenticationForm() {
     fetchData();
   }, []);
 
-  const [isShowAlert, setIsShowAlert] = useState(false);
   const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
-      email: "john@example.com",
+      email: "",
       name: "",
-      password: "password123",
+      password: "",
       terms: true,
+      address: "",
     },
 
     validate: {
@@ -65,28 +69,62 @@ export default function AuthenticationForm() {
       <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form
-        onChange={() => setIsShowAlert(false)}
+        onChange={() => {
+          setIsShowAlert(false);
+          setIsisExist(false);
+        }}
         onSubmit={form.onSubmit((e) => {
           const users = JSON.parse(localStorage.getItem("users"));
 
-          let foundUser = false;
+          if (type === "login") {
+            let foundUser = false;
 
-          users.forEach((user) => {
-            if (
-              user.email === form.values.email &&
-              user.password === form.values.password
-            ) {
-              foundUser = true;
+            users.forEach((user) => {
+              if (
+                user.email === form.values.email &&
+                user.password === form.values.password
+              ) {
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                setCurrentUser(user);
+                foundUser = true;
+                navigate("/");
+              }
+            });
+
+            if (!foundUser) {
+              setIsShowAlert(true);
+              // console.log("Invalid credentials");
+            }
+          }
+
+          if (type === "register") {
+            let foundUser = false;
+            const newUser = {
+              email: form.values.email,
+              name: form.values.name,
+              password: form.values.password,
+              address: form.values.address,
+              terms: true,
+            };
+            users.forEach((user) => {
+              if (user.email === form.values.email) {
+                // alert("aleady register");
+                setIsisExist(true);
+                foundUser = true;
+              }
+            });
+            if (!foundUser) {
+              axios
+                .post(apiUrl, newUser)
+                .then((response) => {
+                  const users = response.data;
+                  localStorage.setItem("users", JSON.stringify(users));
+                })
+                .catch((error) => {
+                  console.error("An error occurred:", error.response.data);
+                });
               navigate("/");
             }
-          });
-
-          if (!foundUser) {
-            // notifications.show({
-            //   message: "Please provide a valid email",
-            //   color: "red",
-            // });
-            setIsShowAlert(true);
           }
         })}
       >
@@ -118,6 +156,10 @@ export default function AuthenticationForm() {
             <TextInput
               label="Shipping address"
               placeholder="15329 Huston 21st"
+              value={form.values.address}
+              onChange={(event) =>
+                form.setFieldValue("address", event.currentTarget.value)
+              }
             />
           )}
 
@@ -135,8 +177,8 @@ export default function AuthenticationForm() {
             }
             radius="md"
           />
-          {isShowAlert && <label>😢</label>}
-
+          {isShowAlert && <label>Invalid Email or Password</label>}
+          {isExist && <label>aleady register</label>}
           {type === "register" && (
             <Checkbox
               label="I accept terms and conditions"

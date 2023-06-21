@@ -1,72 +1,138 @@
-  {"users": [
-  {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john@example.com",
-    "password": "password123",
-    "address": "123 Main Street"
-  },
-  {
-    "id": 2,
-    "name": "Jane Smith",
-    "email": "jane@example.com",
-    "password": "secretword",
-    "address": "456 Elm Avenue"
-  },
-  {
-    "id": 3,
-    "name": "Robert Johnson",
-    "email": "robert@example.com",
-    "password": "12345678",
-    "address": "789 Oak Road"
-  },
-  {
-    "id": 4,
-    "name": "Sarah Williams",
-    "email": "sarah@example.com",
-    "password": "pass1234",
-    "address": "987 Pine Lane"
-  },
-  {
-    "id": 5,
-    "name": "Michael Brown",
-    "email": "michael@example.com",
-    "password": "abcxyz",
-    "address": "654 Cedar Street"
-  },
-  {
-    "id": 6,
-    "name": "Emily Davis",
-    "email": "emily@example.com",
-    "password": "qwerty",
-    "address": "321 Walnut Avenue"
-  },
-  {
-    "id": 7,
-    "name": "David Wilson",
-    "email": "david@example.com",
-    "password": "ilovedogs",
-    "address": "789 Maple Drive"
-  },
-  {
-    "id": 8,
-    "name": "Jennifer Taylor",
-    "email": "jennifer@example.com",
-    "password": "password456",
-    "address": "123 Oak Street"
-  },
-  {
-    "id": 9,
-    "name": "Andrew Anderson",
-    "email": "andrew@example.com",
-    "password": "987654321",
-    "address": "456 Elm Road"
-  },
-  {
-    "id": 10,
-    "name": "Jessica Clark",
-    "email": "jessica@example.com",
-    "password": "mypassword",
-    "address": "789 Pine Avenue"
-  }
-]}
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "password123",
+      "address": "123 Main Street"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "secretword",
+      "address": "456 Elm Avenue"
+    },
+    {
+      "id": 3,
+      "name": "Robert Johnson",
+      "email": "robert@example.com",
+      "password": "12345678",
+      "address": "789 Oak Road"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Williams",
+      "email": "sarah@example.com",
+      "password": "pass1234",
+      "address": "987 Pine Lane"
+    },
+    {
+      "id": 5,
+      "name": "Michael Brown",
+      "email": "michael@example.com",
+      "password": "abcxyz",
+      "address": "654 Cedar Street"
+    },
+    {
+      "id": 6,
+      "name": "Emily Davis",
+      "email": "emily@example.com",
+      "password": "qwerty",
+      "address": "321 Walnut Avenue"
+    },
+    {
+      "id": 7,
+      "name": "David Wilson",
+      "email": "david@example.com",
+      "password": "ilovedogs",
+      "address": "789 Maple Drive"
+    },
+    {
+      "id": 8,
+      "name": "Jennifer Taylor",
+      "email": "jennifer@example.com",
+      "password": "password456",
+      "address": "123 Oak Street"
+    },
+    {
+      "id": 9,
+      "name": "Andrew Anderson",
+      "email": "andrew@example.com",
+      "password": "987654321",
+      "address": "456 Elm Road"
+    },
+    {
+      "id": 10,
+      "name": "Jessica Clark",
+      "email": "jessica@example.com",
+      "password": "mypassword",
+      "address": "789 Pine Avenue"
+    },
+    {
+      "email": "faten@56476gmail.com",
+      "name": "faten",
+      "password": "e456e546re5r567r5",
+      "address": "6e56e456",
+      "terms": true,
+      "id": 11
+    },
+    {
+      "email": "anas123@gmail.com",
+      "name": "anas ",
+      "password": "anas123456",
+      "address": "1233",
+      "terms": true,
+      "id": 12
+    },
+    {
+      "email": "shishi123@gmail.com",
+      "name": "shshi",
+      "password": "shishi12345",
+      "address": "123",
+      "terms": true,
+      "id": 13
+    },
+    {
+      "email": "abd@gmail.com",
+      "name": "adb",
+      "password": "adb12345",
+      "address": "4245w345",
+      "terms": true,
+      "id": 14
+    },
+    {
+      "email": "faten@gmail.com",
+      "name": "faten282",
+      "password": "faten123453",
+      "address": "4e56e456",
+      "terms": true,
+      "id": 15
+    },
+    {
+      "email": "john@example.comasdasd",
+      "name": "",
+      "password": "password123",
+      "address": "",
+      "terms": true,
+      "id": 16
+    },
+    {
+      "email": "john@example.com1",
+      "name": "",
+      "password": "password123",
+      "address": "",
+      "terms": true,
+      "id": 17
+    },
+    {
+      "email": "john@example.comsss",
+      "name": "",
+      "password": "password123",
+      "address": "",
+      "terms": true,
+      "id": 18
+    }
+  ]
+}
