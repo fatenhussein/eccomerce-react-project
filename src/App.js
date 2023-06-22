@@ -14,6 +14,7 @@ import Producut from './components/Producut';
 import Login from './components/Login';
 import NoPage from './components/NoPage';
 import Card from './components/Card';
+import Profile from './components/Profile';
 import axios from 'axios';
 
 export default function App() {
@@ -38,6 +39,8 @@ export default function App() {
               }
             />
             <Route path='products' element={<Producut />} />
+            <Route path='profile' element={<Profile />} />
+
             <Route path='card' element={<Card />} />
             <Route path='*' element={<NoPage />} />
           </Route>
