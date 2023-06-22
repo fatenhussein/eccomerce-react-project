@@ -57,7 +57,56 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function FeaturesCard({ product }) {
+  const [products, setProducts] = useState([]);
+  const [currentUser, setCurrentUser] = useState('');
+  const [users, setUsers] = useState('');
+  const [cart, setCart] = useState([]);
+
+  const apiUrl = 'http://localhost:3500/users';
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await axios.get(apiUrl);
+  //       users = response.data;
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
   const { classes } = useStyles();
+  useEffect(() => {
+    axios
+      .get('https://fakestoreapi.com/products')
+      .then((response) => {
+        setProducts(response.data);
+      })
+      .catch((error) => {
+        console.error(
+          'Error retrieving product data:',
+          error
+        );
+      });
+  }, []);
+
+  useEffect(() => {
+    setCurrentUser(
+      JSON.parse(localStorage.getItem('currentUser'))
+    );
+  }, []);
+
+  const addOneToCart = (product) => {
+    // console.log(currentUser);
+    // console.log(product);
+    // if (product) {
+    const updatedCart = [...currentUser.cart, product];
+    setCurrentUser({ ...currentUser, cart: updatedCart });
+
+    console.log('Product added to cart:', currentUser.cart);
+    // } }else {
+    // console.log('Product not found.');
+  };
 
   return (
     <Card withBorder radius='md' className='product'>
@@ -80,9 +129,12 @@ export function FeaturesCard({ product }) {
             ${product.price}
           </Text>
         </div>
-        <Button  radius='xl' style={{ flex: 1 }}>
+        <Button
+          radius='xl'
+          style={{ flex: 1 }}
+          onClick={() => addOneToCart(product)}
+        >
           Add to Cart
-         
         </Button>
       </Group>
     </Card>
@@ -94,12 +146,15 @@ export default function Subgrid() {
 
   useEffect(() => {
     axios
-      .get('https://fakestoreapi.com/products')
+      .get('http://localhost:3501/products')
       .then((response) => {
         setProducts(response.data);
       })
       .catch((error) => {
-        console.error('Error retrieving product data:', error);
+        console.error(
+          'Error retrieving product data:',
+          error
+        );
       });
   }, []);
 
@@ -114,12 +169,14 @@ export default function Subgrid() {
         ]}
       >
         {products.map((product) => (
-       
-          <FeaturesCard key={product.id} product={product} />
+          <FeaturesCard
+            key={product.id}
+            product={product}
+          />
         ))}
       </SimpleGrid>
     </Container>
   );
 }
 
-//khsdhkgusdkugggit 
+//khsdhkgusdkugggit

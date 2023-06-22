@@ -6,7 +6,7 @@
       "email": "john@example.com",
       "password": "password123",
       "address": "123 Main Street",
-      "cart" : []
+      "cart": []
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "email": "jane@example.com",
       "password": "secretword",
       "address": "456 Elm Avenue",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "email": "robert@example.com",
       "password": "12345678",
       "address": "789 Oak Road",
-      "cart" : []
+      "cart": []
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "email": "sarah@example.com",
       "password": "pass1234",
       "address": "987 Pine Lane",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "email": "michael@example.com",
       "password": "abcxyz",
       "address": "654 Cedar Street",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "email": "emily@example.com",
       "password": "qwerty",
       "address": "321 Walnut Avenue",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "email": "david@example.com",
       "password": "ilovedogs",
       "address": "789 Maple Drive",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "email": "jennifer@example.com",
       "password": "password456",
       "address": "123 Oak Street",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "email": "andrew@example.com",
       "password": "987654321",
       "address": "456 Elm Road",
-       "cart" : []
+      "cart": []
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "email": "jessica@example.com",
       "password": "mypassword",
       "address": "789 Pine Avenue",
-       "cart" : []
+      "cart": []
     },
     {
       "email": "faten@56476gmail.com",
@@ -87,7 +87,7 @@
       "address": "6e56e456",
       "terms": true,
       "id": 11,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "anas123@gmail.com",
@@ -96,7 +96,7 @@
       "address": "1233",
       "terms": true,
       "id": 12,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "shishi123@gmail.com",
@@ -105,7 +105,7 @@
       "address": "123",
       "terms": true,
       "id": 13,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "abd@gmail.com",
@@ -114,7 +114,7 @@
       "address": "4245w345",
       "terms": true,
       "id": 14,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "faten@gmail.com",
@@ -123,7 +123,7 @@
       "address": "4e56e456",
       "terms": true,
       "id": 15,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "john@example.comasdasd",
@@ -132,7 +132,7 @@
       "address": "",
       "terms": true,
       "id": 16,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "john@example.com1",
@@ -141,7 +141,7 @@
       "address": "",
       "terms": true,
       "id": 17,
-       "cart" : []
+      "cart": []
     },
     {
       "email": "john@example.comsss",
@@ -150,15 +150,6 @@
       "address": "",
       "terms": true,
       "id": 18
-    },
-    {
-      "email": "jane@example.co",
-      "name": "",
-      "password": "secretword",
-      "address": "",
-      "terms": true,
-      "id": 19,
-       "cart" : []
     }
   ]
 }

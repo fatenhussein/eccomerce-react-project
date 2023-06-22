@@ -1,13 +1,9 @@
 import { Avatar, Text, Button, Paper } from '@mantine/core';
 
-export default function UserInfoAction({
-  avatar,
-  name,
-  email,
-  job,
-}) {
+export default function UserInfoAction() {
   return (
     <Paper
+      className='profile'
       radius='md'
       withBorder
       p='lg'
@@ -19,20 +15,23 @@ export default function UserInfoAction({
       })}
     >
       <Avatar
-        src={avatar}
+        src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80'
         size={120}
         radius={120}
         mx='auto'
       />
       <Text ta='center' fz='lg' weight={500} mt='md'>
-        {name}
+        Jane Fingerlicker
       </Text>
       <Text ta='center' c='dimmed' fz='sm'>
-        {email} • {job}
+        jfingerlicker@me.io
+      </Text>
+      <Text ta='center' c='dimmed' fz='sm'>
+        Address
       </Text>
 
       <Button variant='default' fullWidth mt='md'>
-        Send message
+        Edite
       </Button>
     </Paper>
   );

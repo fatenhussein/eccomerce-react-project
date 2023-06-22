@@ -171,7 +171,7 @@ export default function Navbar({
               className={classes.link}
               to='./products'
             >
-              Producut
+              Products
             </NavLink>
           </Group>
 
@@ -224,7 +224,7 @@ export default function Navbar({
           </NavLink>
 
           <NavLink className={classes.link} to='./products'>
-            Producut
+            Products
           </NavLink>
 
           <Divider
