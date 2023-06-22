@@ -10,7 +10,6 @@ import {
 import { SimpleGrid, Container } from "@mantine/core";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import "../../src/App.css";
 
 const useStyles = createStyles((theme) => ({
@@ -89,17 +88,13 @@ export function FeaturesCard({ product }) {
 
   const addOneToCart = (product) => {
     newCart = [...newCart, product];
+    console.log(newCart);
     setCurrentUser({ ...currentUser, cart: newCart });
-      
 
-
-    // currnet user ==> id from users array
-    
-    // when we have the same id for  
-
-    //we shold update the same user in users data 
-    
-  
+    axios
+      .put(`http://localhost:3500/users/${currentUser.id}`, currentUser)
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error(error));
   };
 
   return (

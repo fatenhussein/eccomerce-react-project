@@ -6,49 +6,76 @@ import {
   ActionIcon,
   Anchor,
   ScrollArea,
-} from '@mantine/core';
-import { IconPencil, IconTrash } from '@tabler/icons-react';
-
+} from "@mantine/core";
+import { IconPencil, IconTrash } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const data = {
   data: [
     {
-      image: 'https://i.imgur.com/ZL52Q2D.png',
-      item: 'Car',
-      price: '$168.00',
-      quantity: '1',
+      image: "https://i.imgur.com/ZL52Q2D.png",
+      item: "Car",
+      price: "$168.00",
+      quantity: "1",
     },
   ],
 };
+const cart = JSON.parse(localStorage.getItem("currentUser"));
 
 export default function Cards(handelClick) {
-  const rows = data.data.map((item) => (
+  const [currentUser, setCurrentUser] = useState("");
+  const [users, setUsers] = useState("");
+
+
+  const apiUrl = "http://localhost:3500/users";
+
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(apiUrl);
+        users = response.data;
+        localStorage.setItem(
+          'users',
+          JSON.stringify(users)
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+ 
+
+  const rows = cart.cart.map((item) => (
     <tr key={item.item}>
       <td>
-        <Group spacing='sm'>
+        <Group spacing="sm">
           <Avatar size={100} src={item.image} radius={15} />
-          <Text fz='sm' fw={500}>
+          <Text fz="sm" fw={500}>
             {item.item}
           </Text>
         </Group>
       </td>
 
       <td>
-        <Anchor component='button' size='sm'>
+        <Anchor component="button" size="sm">
           {item.price}
         </Anchor>
       </td>
       <td>
-        <Text fz='sm' c='dimmed'>
+        <Text fz="sm" c="dimmed">
           {item.quantity}
         </Text>
       </td>
       <td>
-        <Group spacing={0} position='right'>
+        <Group spacing={0} position="right">
           <ActionIcon>
-            <IconPencil size='1rem' stroke={1.5} />
+            <IconPencil size="1rem" stroke={1.5} />
           </ActionIcon>
-          <ActionIcon color='red'>
-            <IconTrash size='1rem' stroke={1.5} />
+          <ActionIcon color="red">
+            <IconTrash size="1rem" stroke={1.5} />
           </ActionIcon>
         </Group>
       </td>
@@ -56,9 +83,9 @@ export default function Cards(handelClick) {
   ));
 
   return (
-    <ScrollArea className='card'>
+    <ScrollArea className="card">
       <h1>😢</h1>
-      <Table sx={{ minWidth: 800 }} verticalSpacing='sm'>
+      <Table sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
           <tr>
             <th>Item</th>
