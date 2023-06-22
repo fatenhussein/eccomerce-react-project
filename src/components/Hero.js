@@ -123,7 +123,7 @@ export default function HeroBullets() {
             </Group>
           </div>
           <Image
-            src="https://ui.mantine.dev/_next/static/media/image.9a65bd94.svg"
+            src="https://img.freepik.com/premium-vector/woman-buy-dresses-shop_253349-4345.jpg?w=996"
             className={classes.image}
           />
         </div>

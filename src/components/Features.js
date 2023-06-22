@@ -136,6 +136,8 @@
 //   );
 // }
 
+import { Avatar } from '@mantine/core';
+
 import {
   ThemeIcon,
   Text,
@@ -154,23 +156,24 @@ import {
 } from '@tabler/icons-react';
 
 export const MOCKDATA = [
+  
   {
-    icon: IconGauge,
-    title: 'Extreme performance',
+    icon: IconUser,
+    title: ' Hinata Hyuga ',
     description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
+      'Im in love with the stunning vintage dresses I found at Timeless Threads! Their collection is a treasure trove of beautifully preserved garments from different eras. The shops commitment to sustainability and personalized recommendations sets them apart',
   },
   {
     icon: IconUser,
-    title: 'Privacy focused',
+    title: 'Nezuko Kamado',
     description:
-      'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
+      'Timeless Threads offers exceptional quality and a remarkable selection of vintage dresses. The staffs expertise and friendly service make the shopping experience enjoyable and seamless. I highly recommend Timeless Threads for vintage fashion enthusiasts seeking timeless elegance.',
   },
   {
-    icon: IconCookie,
-    title: 'No third parties',
+    icon: IconUser,
+    title: 'Gigi Hadid',
     description:
-      'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
+      'Timeless Threads has rekindled my love for vintage fashion. Each visit feels like stepping into a whimsical time capsule. The attention to detail, authenticity of the garments, and the warm staff make it a must-visit for those seeking enchanting and elegant vintage pieces.',
   },
 ];
 
@@ -237,6 +240,8 @@ export default function FeaturesGrid({
 
   return (
     <Container className={classes.wrapper}>
+<h1 style={{textAlign:"center"}}>Feedbacks</h1>
+      
       <Title className={classes.title}>{title}</Title>
 
       <Container size={560} p={0}>
