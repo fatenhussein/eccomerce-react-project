@@ -61,20 +61,24 @@ export function FeaturesCard({ product }) {
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
+ 
+  
 
   const addOneToCart = (product) => {
     newCart = [...newCart, product];
 
-    setCurrentUser({ ...currentUser, cart: newCart });
 
+
+    setCurrentUser({...currentUser, cart:newCart });
+
+    console.log(currentUser);
     axios
       .put(`http://localhost:3500/users/${currentUser.id}`, currentUser)
       .then((response) =>
-      console.log(response)
+      console.log(response.data)
       )
       .catch((error) => console.error(error));
 
-      console.log(currentUser);
   };
 
 

@@ -282,6 +282,15 @@
       "address": "",
       "terms": true,
       "id": 18
+    },
+    {
+      "email": "hala@example.com",
+      "name": "hala",
+      "password": "12345678",
+      "address": "12345",
+      "terms": true,
+      "cart": [],
+      "id": 19
     }
   ]
 }

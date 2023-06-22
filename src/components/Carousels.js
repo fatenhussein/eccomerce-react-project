@@ -40,11 +40,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-// interface CardProps {
-//   image: string;
-//   title: string;
-//   category: string;
-// }
 
 function Card({ image, title, category }) {
   const { classes } = useStyles();

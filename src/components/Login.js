@@ -1,7 +1,7 @@
-import { useToggle, upperFirst } from '@mantine/hooks';
-import { useForm } from '@mantine/form';
+import { useToggle, upperFirst } from "@mantine/hooks";
+import { useForm } from "@mantine/form";
 
-import axios from 'axios';
+import axios from "axios";
 
 import {
   TextInput,
@@ -14,74 +14,45 @@ import {
   Checkbox,
   Anchor,
   Stack,
-} from '@mantine/core';
+} from "@mantine/core";
 
-import '../../src/App.css';
-import { useEffect, useState } from 'react';
-import {
-  Navigate,
-  json,
-  useNavigate,
-} from 'react-router-dom';
+import "../../src/App.css";
+import { useEffect, useState } from "react";
+import { Navigate, json, useNavigate } from "react-router-dom";
 
-export default function AuthenticationForm({
-  setIsShowIcon,
-}) {
+export default function AuthenticationForm({ setIsShowIcon, users  , updateUsers}) {
   const navigate = useNavigate();
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [isExist, setIsisExist] = useState(false);
 
-
   
+  const apiUrl = "http://localhost:3500/users";
 
-  const apiUrl = 'http://localhost:3500/users';
-  let users;
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get(apiUrl);
-        users = response.data;
-        localStorage.setItem(
-          'users',
-          JSON.stringify(users)
-        );
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  const [type, toggle] = useToggle(['login', 'register']);
+  const [type, toggle] = useToggle(["login", "register"]);
   const form = useForm({
     initialValues: {
-      email: '',
-      name: '',
-      password: '',
+      email: "",
+      name: "",
+      password: "",
       terms: true,
-      address: '',
+      address: "",
     },
 
     validate: {
-      email: (val) =>
-        /^\S+@\S+$/.test(val) ? null : 'Invalid email',
+      email: (val) => (/^\S+@\S+$/.test(val) ? null : "Invalid email"),
       password: (val) =>
         val.length <= 6
-          ? 'Password should include at least 6 characters'
+          ? "Password should include at least 6 characters"
           : null,
     },
   });
 
   return (
-    <Paper radius='md' p='xl' withBorder className='login'>
-      <Text size='lg' weight={500}>
+    <Paper radius="md" p="xl" withBorder className="login">
+      <Text size="lg" weight={500}>
         Welcome to Mantine, {type} with
       </Text>
-      <Divider
-        label='Or continue with email'
-        labelPosition='center'
-        my='lg'
-      />
+      <Divider label="Or continue with email" labelPosition="center" my="lg" />
 
       <form
         onChange={() => {
@@ -89,11 +60,7 @@ export default function AuthenticationForm({
           setIsisExist(false);
         }}
         onSubmit={form.onSubmit((e) => {
-          const users = JSON.parse(
-            localStorage.getItem('users')
-          );
-
-          if (type === 'login') {
+          if (type === "login") {
             let foundUser = false;
 
             users.forEach((user) => {
@@ -101,13 +68,10 @@ export default function AuthenticationForm({
                 user.email === form.values.email &&
                 user.password === form.values.password
               ) {
-                localStorage.setItem(
-                  'currentUser',
-                  JSON.stringify(user)
-                );
-       
+                localStorage.setItem("currentUser", JSON.stringify(user));
+
                 foundUser = true;
-                navigate('/');
+                navigate("/");
                 setIsShowIcon(true);
               }
             });
@@ -117,7 +81,7 @@ export default function AuthenticationForm({
             }
           }
 
-          if (type === 'register') {
+          if (type === "register") {
             let foundUser = false;
             const newUser = {
               email: form.values.email,
@@ -125,6 +89,7 @@ export default function AuthenticationForm({
               password: form.values.password,
               address: form.values.address,
               terms: true,
+              cart:[]
             };
             users.forEach((user) => {
               if (user.email === form.values.email) {
@@ -137,115 +102,92 @@ export default function AuthenticationForm({
                 .post(apiUrl, newUser)
                 .then((response) => {
                   const users = response.data;
-                  localStorage.setItem(
-                    'users',
-                    JSON.stringify(users)
-                  );
+                  localStorage.setItem("users", JSON.stringify(users));
                 })
                 .catch((error) => {
-                  console.error(
-                    'An error occurred:',
-                    error.response.data
-                  );
+                  console.error("An error occurred:", error.response.data);
                 });
 
-              navigate('/');
+              navigate("/");
             }
           }
         })}
       >
         <Stack>
-          {type === 'register' && (
+          {type === "register" && (
             <TextInput
-              label='Name'
-              placeholder='Your name'
+              label="Name"
+              placeholder="Your name"
               value={form.values.name}
               onChange={(event) =>
-                form.setFieldValue(
-                  'name',
-                  event.currentTarget.value
-                )
+                form.setFieldValue("name", event.currentTarget.value)
               }
-              radius='md'
+              radius="md"
             />
           )}
 
           <TextInput
             required
-            label='Email'
-            placeholder='hello@mantine.dev'
+            label="Email"
+            placeholder="hello@mantine.dev"
             value={form.values.email}
             onChange={(event) =>
-              form.setFieldValue(
-                'email',
-                event.currentTarget.value
-              )
+              form.setFieldValue("email", event.currentTarget.value)
             }
-            error={form.errors.email && 'Invalid email'}
-            radius='md'
+            error={form.errors.email && "Invalid email"}
+            radius="md"
           />
-          {type === 'register' && (
+          {type === "register" && (
             <TextInput
-              label='Shipping address'
-              placeholder='15329 Huston 21st'
+              label="Shipping address"
+              placeholder="15329 Huston 21st"
               value={form.values.address}
               onChange={(event) =>
-                form.setFieldValue(
-                  'address',
-                  event.currentTarget.value
-                )
+                form.setFieldValue("address", event.currentTarget.value)
               }
             />
           )}
 
           <PasswordInput
             required
-            label='Password'
-            placeholder='Your password'
+            label="Password"
+            placeholder="Your password"
             value={form.values.password}
             onChange={(event) =>
-              form.setFieldValue(
-                'password',
-                event.currentTarget.value
-              )
+              form.setFieldValue("password", event.currentTarget.value)
             }
             error={
               form.errors.password &&
-              'Password should include at least 6 characters'
+              "Password should include at least 6 characters"
             }
-            radius='md'
+            radius="md"
           />
-          {isShowAlert && (
-            <label>Invalid Email or Password</label>
-          )}
+          {isShowAlert && <label>Invalid Email or Password</label>}
           {isExist && <label>aleady register</label>}
-          {type === 'register' && (
+          {type === "register" && (
             <Checkbox
-              label='I accept terms and conditions'
+              label="I accept terms and conditions"
               checked={form.values.terms}
               onChange={(event) =>
-                form.setFieldValue(
-                  'terms',
-                  event.currentTarget.checked
-                )
+                form.setFieldValue("terms", event.currentTarget.checked)
               }
             />
           )}
         </Stack>
 
-        <Group position='apart' mt='xl'>
+        <Group position="apart" mt="xl">
           <Anchor
-            component='button'
-            type='button'
-            color='dimmed'
+            component="button"
+            type="button"
+            color="dimmed"
             onClick={() => toggle()}
-            size='xs'
+            size="xs"
           >
-            {type === 'register'
-              ? 'Already have an account? Login'
+            {type === "register"
+              ? "Already have an account? Login"
               : "Don't have an account? Register"}
           </Anchor>
-          <Button type='submit' radius='xl'>
+          <Button type="submit" radius="xl">
             {upperFirst(type)}
           </Button>
         </Group>
