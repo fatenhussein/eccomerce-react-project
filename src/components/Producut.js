@@ -58,17 +58,17 @@ export function FeaturesCard({ product }) {
 
   const apiUrl = "http://localhost:3500/users";
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get(apiUrl);
-        users = response.data;
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const response = await axios.get(apiUrl);
+  //       users = response.data;
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
   const { classes } = useStyles();
   useEffect(() => {
     axios
@@ -81,23 +81,22 @@ export function FeaturesCard({ product }) {
       });
   }, []);
 
-  // useEffect(() => {
-  //   setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
-  // }, []);
+  useEffect(() => {
+    setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
+  }, []);
 
-  const addOneToCart = (id) => {
-    // const product = products.find((product) => product.id === id);
+  const addOneToCart = (product) => {
+    console.log(currentUser);
+    console.log(product);
     // if (product) {
     //   const updatedCart = [...currentUser.cart, product];
-    //   localStorage.setItem("cart" , updatedCart);
-      
-      
-    //   console.log("Product added to cart:", currentUser);
+    //   setCurrentUser({ ...currentUser, cart: updatedCart });
+
+    //   console.log("Product added to cart:", currentUser.cart);
     // } else {
     //   console.log("Product not found.");
     // }
   };
-
 
   return (
     <Card withBorder radius="md" className="product">
@@ -123,7 +122,7 @@ export function FeaturesCard({ product }) {
         <Button
           radius="xl"
           style={{ flex: 1 }}
-          onClick={() => addOneToCart(product.id)}
+          onClick={() => addOneToCart(product)}
         >
           Add to Cart
         </Button>
