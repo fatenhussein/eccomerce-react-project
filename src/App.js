@@ -9,12 +9,13 @@ import Footer from "./components/Footer";
 import Producut from "./components/Producut";
 import Login from "./components/Login";
 import NoPage from "./components/NoPage";
-import Card from "./components/Card";
+import Card from "./components/Cart";
 import { useEffect } from "react";
-import axios from "axios";
+
 
 export default function App() {
   return (
+  
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <BrowserRouter>
         <Navbar />
@@ -32,6 +33,7 @@ export default function App() {
         <Footer />
       </BrowserRouter>
     </MantineProvider>
+
   );
 }
 

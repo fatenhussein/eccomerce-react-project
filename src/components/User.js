@@ -106,7 +106,8 @@ export default function UserMenu() {
             icon={<IconLogout size='0.9rem' stroke={1.5} />}
             onClick={()=>{
             
-              localStorage.removeItem("currentUser");
+              // localStorage.removeItem("currentUser");
+              // setCurrentUser("")
           
              navigate("/login");
 
