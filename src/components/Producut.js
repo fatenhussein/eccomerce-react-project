@@ -49,27 +49,29 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[5],
   },
 }));
-
+let newCart = [];
 export function FeaturesCard({ product }) {
   const [products, setProducts] = useState([]);
   const [currentUser, setCurrentUser] = useState("");
   const [users, setUsers] = useState("");
   const [cart, setCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   const apiUrl = "http://localhost:3500/users";
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await axios.get(apiUrl);
-  //       users = response.data;
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
   const { classes } = useStyles();
+
+  useEffect(() => {
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.error("Error retrieving product data:", error);
+      });
+  }, []);
+
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
@@ -86,16 +88,18 @@ export function FeaturesCard({ product }) {
   }, []);
 
   const addOneToCart = (product) => {
-    console.log(currentUser);
-    console.log(product);
-    // if (product) {
-    //   const updatedCart = [...currentUser.cart, product];
-    //   setCurrentUser({ ...currentUser, cart: updatedCart });
+    newCart = [...newCart, product];
+    setCurrentUser({ ...currentUser, cart: newCart });
+      
 
-    //   console.log("Product added to cart:", currentUser.cart);
-    // } else {
-    //   console.log("Product not found.");
-    // }
+
+    // currnet user ==> id from users array
+    
+    // when we have the same id for  
+
+    //we shold update the same user in users data 
+    
+  
   };
 
   return (
@@ -136,7 +140,7 @@ export default function Subgrid() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3501/products')
+      .get("http://localhost:3501/products")
       .then((response) => {
         setProducts(response.data);
       })
