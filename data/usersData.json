@@ -5,70 +5,80 @@
       "name": "John Doe",
       "email": "john@example.com",
       "password": "password123",
-      "address": "123 Main Street"
+      "address": "123 Main Street",
+      "cart": []
     },
     {
       "id": 2,
       "name": "Jane Smith",
       "email": "jane@example.com",
       "password": "secretword",
-      "address": "456 Elm Avenue"
+      "address": "456 Elm Avenue",
+      "cart": []
     },
     {
       "id": 3,
       "name": "Robert Johnson",
       "email": "robert@example.com",
       "password": "12345678",
-      "address": "789 Oak Road"
+      "address": "789 Oak Road",
+      "cart": []
     },
     {
       "id": 4,
       "name": "Sarah Williams",
       "email": "sarah@example.com",
       "password": "pass1234",
-      "address": "987 Pine Lane"
+      "address": "987 Pine Lane",
+      "cart": []
     },
     {
       "id": 5,
       "name": "Michael Brown",
       "email": "michael@example.com",
       "password": "abcxyz",
-      "address": "654 Cedar Street"
+      "address": "654 Cedar Street",
+      "cart": []
     },
     {
       "id": 6,
       "name": "Emily Davis",
       "email": "emily@example.com",
       "password": "qwerty",
-      "address": "321 Walnut Avenue"
+      "address": "321 Walnut Avenue",
+      "cart": []
     },
     {
       "id": 7,
       "name": "David Wilson",
       "email": "david@example.com",
       "password": "ilovedogs",
-      "address": "789 Maple Drive"
+      "address": "789 Maple Drive",
+      "cart": []
     },
     {
       "id": 8,
       "name": "Jennifer Taylor",
       "email": "jennifer@example.com",
       "password": "password456",
-      "address": "123 Oak Street"
+      "address": "123 Oak Street",
+      "cart": []
     },
     {
       "id": 9,
       "name": "Andrew Anderson",
       "email": "andrew@example.com",
       "password": "987654321",
-      "address": "456 Elm Road"
+      "address": "456 Elm Road",
+      "cart": []
     },
     {
       "id": 10,
       "name": "Jessica Clark",
       "email": "jessica@example.com",
       "password": "mypassword",
-      "address": "789 Pine Avenue"
+      "address": "789 Pine Avenue",
+      "cart": []
     },
     {
       "email": "faten@56476gmail.com",
@@ -76,7 +86,8 @@
       "password": "e456e546re5r567r5",
       "address": "6e56e456",
       "terms": true,
-      "id": 11
+      "id": 11,
+      "cart": []
     },
     {
       "email": "anas123@gmail.com",
@@ -84,7 +95,8 @@
       "password": "anas123456",
       "address": "1233",
       "terms": true,
-      "id": 12
+      "id": 12,
+      "cart": []
     },
     {
       "email": "shishi123@gmail.com",
@@ -92,7 +104,8 @@
       "password": "shishi12345",
       "address": "123",
       "terms": true,
-      "id": 13
+      "id": 13,
+      "cart": []
     },
     {
       "email": "abd@gmail.com",
@@ -100,7 +113,8 @@
       "password": "adb12345",
       "address": "4245w345",
       "terms": true,
-      "id": 14
+      "id": 14,
+      "cart": []
     },
     {
       "email": "faten@gmail.com",
@@ -108,7 +122,8 @@
       "password": "faten123453",
       "address": "4e56e456",
       "terms": true,
-      "id": 15
+      "id": 15,
+      "cart": []
     },
     {
       "email": "john@example.comasdasd",
@@ -116,7 +131,8 @@
       "password": "password123",
       "address": "",
       "terms": true,
-      "id": 16
+      "id": 16,
+      "cart": []
     },
     {
       "email": "john@example.com1",
@@ -124,7 +140,8 @@
       "password": "password123",
       "address": "",
       "terms": true,
-      "id": 17
+      "id": 17,
+      "cart": []
     },
     {
       "email": "john@example.comsss",
@@ -133,14 +150,6 @@
       "address": "",
       "terms": true,
       "id": 18
-    },
-    {
-      "email": "yousef123@gmail.com",
-      "name": "yousf12",
-      "password": "123456789",
-      "address": "4546546",
-      "terms": true,
-      "id": 19
     }
   ]
 }

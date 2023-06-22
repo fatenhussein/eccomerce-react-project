@@ -131,7 +131,10 @@ const useStyles = createStyles((theme) => ({
 //   },
 // ];
 
-export default function Navbar() {
+export default function Navbar({
+  setIsShowIcon,
+  isShowIcon,
+}) {
   const [
     drawerOpened,
     { toggle: toggleDrawer, close: closeDrawer },
@@ -168,20 +171,25 @@ export default function Navbar() {
               className={classes.link}
               to='./products'
             >
-              Producut
+              Products
             </NavLink>
           </Group>
 
           <Group className={classes.hiddenMobile}>
             {/* <Button variant='default'>Log in</Button> */}
-            <NavLink to='./login'>
-              <Button>Sign up</Button>
-            </NavLink>
+            {!isShowIcon && (
+              <NavLink to='./login'>
+                <Button>Sign up</Button>
+              </NavLink>
+            )}
             <NavLink className={classes.link} to='./card'>
               {/* <IconBasketFilled /> */}
-              <IconBasketOff />
+
+              {isShowIcon && <IconBasketOff />}
             </NavLink>
-            <UserMenu />
+            {isShowIcon && (
+              <UserMenu setIsShowIcon={setIsShowIcon} />
+            )}
           </Group>
 
           <Burger
@@ -216,7 +224,7 @@ export default function Navbar() {
           </NavLink>
 
           <NavLink className={classes.link} to='./products'>
-            Producut
+            Products
           </NavLink>
 
           <Divider
@@ -236,8 +244,8 @@ export default function Navbar() {
             <NavLink className={classes.link} to='./card'>
               {/* <IconBasketFilled /> */}
             </NavLink>
-            <IconBasketOff />
-            <UserMenu />
+            {isShowIcon && <IconBasketOff />}
+            {isShowIcon && <UserMenu />}
           </Group>
         </ScrollArea>
       </Drawer>
