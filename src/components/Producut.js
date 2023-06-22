@@ -94,7 +94,7 @@ export default function Subgrid() {
 
   useEffect(() => {
     axios
-      .get('https://fakestoreapi.com/products')
+      .get('http://localhost:3501/products')
       .then((response) => {
         setProducts(response.data);
       })
