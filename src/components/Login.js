@@ -28,10 +28,11 @@ export default function AuthenticationForm({
   setIsShowIcon,
 }) {
   const navigate = useNavigate();
-  // const [currentUser, setCurrentUser] = useState("");
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [isExist, setIsisExist] = useState(false);
-  // const currentUser = localStorage.getItem("currentUser");
+
+
+  
 
   const apiUrl = 'http://localhost:3500/users';
   let users;
@@ -104,7 +105,7 @@ export default function AuthenticationForm({
                   'currentUser',
                   JSON.stringify(user)
                 );
-                //  setCurrentUser(user);
+       
                 foundUser = true;
                 navigate('/');
                 setIsShowIcon(true);
@@ -127,7 +128,6 @@ export default function AuthenticationForm({
             };
             users.forEach((user) => {
               if (user.email === form.values.email) {
-                // alert("aleady register");
                 setIsisExist(true);
                 foundUser = true;
               }

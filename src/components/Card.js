@@ -21,28 +21,30 @@ const data = {
   ],
 };
 
-
 export default function Cards(handelClick) {
   const [currentUser, setCurrentUser] = useState("");
-  const [users, setUsers] = useState("");
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
-console.log(currentUser);
- const userId = currentUser.id;
+//   axios
+//   .get(`http://localhost:3500/users/${currentUser.id}`, currentUser)
+//   .then((response) =>
+//     console.log(response)
+//   )
+//   .catch((error) => console.error(error));
+
+ 
+// };
+useEffect (()=>{
+  axios.get(`http://localhost:3500/users`)
+  .then(function (response) {
+    console.log(response);
+  })
+},[])
 
 
-  // useEffect(() => {
-  //   axios.get(`http://localhost:3500/users/${userId}`,{
-  //   })
-  //   .then(function (response) {
-    
-  //     setCart(response.data.cart);
-  //   })
-  // }, []);
 
   const rows = data.data.map((item) => (
     <tr key={item.item}>

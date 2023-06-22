@@ -41,6 +41,22 @@
       "address": "789 Oak Road",
       "cart": [
         {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        },
+        {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        },
+        {
           "id": "3",
           "title": "Vintage dress",
           "price": "79.99",
@@ -57,20 +73,12 @@
           "quantity": 2
         },
         {
-          "id": "4",
+          "id": "3",
           "title": "Vintage dress",
           "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
+          "description": "Charming vintage dress with a floral print ",
+          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
+          "quantity": 1
         }
       ]
     },
@@ -203,7 +211,24 @@
       "address": "1233",
       "terms": true,
       "id": 12,
-      "cart": []
+      "cart": [
+        {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        },
+        {
+          "id": "3",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Charming vintage dress with a floral print ",
+          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
+          "quantity": 1
+        }
+      ]
     },
     {
       "email": "shishi123@gmail.com",
