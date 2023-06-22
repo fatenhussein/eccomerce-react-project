@@ -1,38 +1,42 @@
 import { Avatar, Text, Button, Paper } from '@mantine/core';
 
 export default function UserInfoAction() {
+  // person["lastName"]
+  const myUser = JSON.parse(localStorage.getItem('currentUser'))
+  console.log(myUser);
+const name=myUser.name;
+const email=myUser.email;
+const address = myUser.address
   return (
     <Paper
-      className='profile'
-      radius='md'
+      className="profile"
+      radius="md"
       withBorder
-      p='lg'
+      p="lg"
       sx={(theme) => ({
         backgroundColor:
-          theme.colorScheme === 'dark'
-            ? theme.colors.dark[8]
-            : theme.white,
+          theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
       })}
     >
       <Avatar
-        src='https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80'
+        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
         size={120}
         radius={120}
-        mx='auto'
+        mx="auto"
       />
-      <Text ta='center' fz='lg' weight={500} mt='md'>
-        Jane Fingerlicker
+      <Text ta="center" fz="lg" weight={500} mt="md">
+        {name}
       </Text>
-      <Text ta='center' c='dimmed' fz='sm'>
-        jfingerlicker@me.io
+      <Text ta="center" c="dimmed" fz="sm">
+       {email}
       </Text>
-      <Text ta='center' c='dimmed' fz='sm'>
-        Address
+      <Text ta="center" c="dimmed" fz="sm">
+    {address}
       </Text>
 
-      <Button variant='default' fullWidth mt='md'>
+      {/* <Button variant="default" fullWidth mt="md">
         Edite
-      </Button>
+      </Button> */}
     </Paper>
-  );
+  )
 }
