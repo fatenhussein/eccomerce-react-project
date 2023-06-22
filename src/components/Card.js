@@ -20,35 +20,31 @@ const data = {
     },
   ],
 };
-const cart = JSON.parse(localStorage.getItem("currentUser"));
+
 
 export default function Cards(handelClick) {
   const [currentUser, setCurrentUser] = useState("");
   const [users, setUsers] = useState("");
-
-
-  const apiUrl = "http://localhost:3500/users";
-
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get(apiUrl);
-        users = response.data;
-        localStorage.setItem(
-          'users',
-          JSON.stringify(users)
-        );
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
+    setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
- 
+console.log(currentUser);
+ const userId = currentUser.id;
 
-  const rows = cart.cart.map((item) => (
+
+  // useEffect(() => {
+  //   axios.get(`http://localhost:3500/users/${userId}`,{
+  //   })
+  //   .then(function (response) {
+    
+  //     setCart(response.data.cart);
+  //   })
+  // }, []);
+
+  const rows = data.data.map((item) => (
     <tr key={item.item}>
       <td>
         <Group spacing="sm">
