@@ -150,31 +150,6 @@
       "address": "",
       "terms": true,
       "id": 18
-    },
-    {
-      "email": "jane@example.co",
-      "name": "",
-      "password": "secretword",
-      "address": "",
-      "terms": true,
-      "id": 19,
-      "cart": []
-    },
-    {
-      "email": "sheraz.ayman@gmail.com",
-      "name": "",
-      "password": "12345678Sr",
-      "address": "",
-      "terms": true,
-      "id": 20
-    },
-    {
-      "email": "sheeraz.ayman@gmail.com",
-      "name": "sheraz ayman",
-      "password": "12345678Sr",
-      "address": "12344 jubaiha",
-      "terms": true,
-      "id": 21
     }
   ]
 }
