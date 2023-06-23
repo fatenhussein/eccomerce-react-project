@@ -23,6 +23,12 @@ export default function App() {
     window.localStorage.getItem('isShowIcon')
   );
   const [users, setUsers] = useState([]);
+ 
+  const [cart, setCart] = useState([]);
+ 
+
+  
+
 
   useEffect(() => {
     window.localStorage.setItem(
@@ -77,7 +83,7 @@ export default function App() {
             />
             <Route
               path='products'
-              element={<Producut users={users}  setUsers={setUsers}/>}
+              element={<Producut users={users}  setUsers={setUsers} />}
             />
             <Route path='profile' element={<Profile />} />
             <Route path='AboutUs' element={<AboutUs />} />

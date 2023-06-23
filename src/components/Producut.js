@@ -59,29 +59,37 @@ const useStyles = createStyles((theme) => ({
 // }
 
 export default function Subgrid({users , setUsers}) {
-  const [cart, setCart] = useState("");
+  const [cart, setCart] = useState(localStorage.getItem("cart"));
   const { classes } = useStyles();
   const [currentUser, setCurrentUser] = useState('');
   const [products, setProducts] = useState([]);
+  
   useEffect(() => {
-    setCurrentUser(
-      JSON.parse(localStorage.getItem('currentUser'))
-    );
-  }, []);
+    setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
+  }, [currentUser]);
 
 
-
+  let x = currentUser.cart;
 
   const addOneToCart = (product) => {
+    // setCart([...cart , currentUser.cart]);
     setCart((cart) => [...cart, product]);
-    setCurrentUser({...currentUser, cart: cart })
-    localStorage.setItem("currentUser", JSON.stringify(currentUser))
+    // localStorage.setItem("cart", x);
+
+    // setCurrentUser({...currentUser, cart: cart })
+    // localStorage.setItem("currentUser", JSON.stringify(currentUser))
     axios
       .put(`http://localhost:3500/users/${currentUser.id}`, {
         ...currentUser,
         cart: cart,
       })
-      .then((response) =>console.log(response))
+      .then((response) =>{
+        
+        setUsers([...users , response.data]);
+        console.log(response.data)
+        setCurrentUser(response.data);
+        localStorage.setItem("currentUser", JSON.stringify(response.data))
+      })
       .catch((error) => console.error(error));
    
   };
