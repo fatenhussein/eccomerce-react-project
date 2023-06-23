@@ -6,24 +6,28 @@ import {
   createStyles,
   Button,
   rem,
-} from "@mantine/core";
-import { SimpleGrid, Container } from "@mantine/core";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import "../../src/App.css";
+} from '@mantine/core';
+import { SimpleGrid, Container } from '@mantine/core';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import '../../src/App.css';
 
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+      theme.colorScheme === 'dark'
+        ? theme.colors.dark[7]
+        : theme.white,
   },
   imageSection: {
     padding: theme.spacing.md,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderBottom: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+      theme.colorScheme === 'dark'
+        ? theme.colors.dark[4]
+        : theme.colors.gray[3]
     }`,
   },
   label: {
@@ -32,121 +36,140 @@ const useStyles = createStyles((theme) => ({
     fontWeight: 700,
     fontSize: theme.fontSizes.xs,
     letterSpacing: rem(-0.25),
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
   },
   section: {
     padding: theme.spacing.md,
     borderTop: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[3]
+      theme.colorScheme === 'dark'
+        ? theme.colors.dark[4]
+        : theme.colors.gray[3]
     }`,
   },
   icon: {
     marginRight: rem(5),
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.dark[2]
         : theme.colors.gray[5],
   },
 }));
 
-
-
-
-
-let newCart = [];
 export function FeaturesCard({ product }) {
   const { classes } = useStyles();
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState('');
 
   useEffect(() => {
-    setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
+    setCurrentUser(
+      JSON.parse(localStorage.getItem('currentUser'))
+    );
   }, []);
- 
-  
 
-  const addOneToCart = (product) => {
-    newCart = [...newCart, product];
+  // return (
+  // <Card withBorder radius='md' className='product'>
+  //   <Card.Section className={classes.imageSection}>
+  //     <Image src={product.image} alt={product.title} />
+  //   </Card.Section>
 
+  //   <Group position='apart' mt='md'>
+  //     <div>
+  //       <Text fw={500}>{product.title}</Text>
+  //       <Text fz='xs' c='dimmed'>
+  //         {product.description}
+  //       </Text>
+  //     </div>
+  //   </Group>
 
-
-    setCurrentUser({...currentUser, cart:newCart });
-
-    console.log(currentUser);
-    axios
-      .put(`http://localhost:3500/users/${currentUser.id}`, currentUser)
-      .then((response) =>
-      console.log(response.data)
-      )
-      .catch((error) => console.error(error));
-
-  };
-
-
-
-
-
-  return (
-    <Card withBorder radius="md" className="product">
-      <Card.Section className={classes.imageSection}>
-        <Image src={product.image} alt={product.title} />
-      </Card.Section>
-
-      <Group position="apart" mt="md">
-        <div>
-          <Text fw={500}>{product.title}</Text>
-          <Text fz="xs" c="dimmed">
-            {product.description}
-          </Text>
-        </div>
-      </Group>
-
-      <Group spacing={30} mt={20}>
-        <div>
-          <Text fz="xl" fw={700} sx={{ lineHeight: 1 }}>
-            ${product.price}
-          </Text>
-        </div>
-        <Button
-          radius="xl"
-          style={{ flex: 1 }}
-          onClick={() => addOneToCart(product)}
-        >
-          Add to Cart
-        </Button>
-      </Group>
-    </Card>
-  );
+  //   <Group spacing={30} mt={20}>
+  //     <div>
+  //       <Text fz='xl' fw={700} sx={{ lineHeight: 1 }}>
+  //         ${product.price}
+  //       </Text>
+  //     </div>
+  //     <Button
+  //       radius='xl'
+  //       style={{ flex: 1 }}
+  //       onClick={() => addOneToCart(product.id)}
+  //     >
+  //       Add to Cart
+  //     </Button>
+  //   </Group>
+  // </Card>
+  // )
 }
 
 export default function Subgrid() {
-  const [products, setProducts] = useState([]);
+  const [x, setX] = useState('');
+  const { classes } = useStyles();
 
+  const [products, setProducts] = useState([]);
+  const addOneToCart = (product) => {
+    setX((x) => [...x, product]);
+    console.log(x);
+  };
   useEffect(() => {
     axios
-      .get("http://localhost:3501/products")
+      .get('http://localhost:3501/products')
       .then((response) => {
         setProducts(response.data);
       })
       .catch((error) => {
-        console.error("Error retrieving product data:", error);
+        console.error(
+          'Error retrieving product data:',
+          error
+        );
       });
   }, []);
 
   return (
-    <Container my="md">
+    <Container my='md'>
       <h1>Shop here </h1>
       <SimpleGrid
         cols={4}
         breakpoints={[
-          { maxWidth: "xs", cols: 1 },
-          { maxWidth: "sm", cols: 2 },
+          { maxWidth: 'xs', cols: 1 },
+          { maxWidth: 'sm', cols: 2 },
         ]}
       >
         {products.map((product) => (
-          <FeaturesCard key={product.id} product={product} />
+          <Card withBorder radius='md' className='product'>
+            <Card.Section className={classes.imageSection}>
+              <Image
+                src={product.image}
+                alt={product.title}
+              />
+            </Card.Section>
+
+            <Group position='apart' mt='md'>
+              <div>
+                <Text fw={500}>{product.title}</Text>
+                <Text fz='xs' c='dimmed'>
+                  {product.description}
+                </Text>
+              </div>
+            </Group>
+
+            <Group spacing={30} mt={20}>
+              <div>
+                <Text
+                  fz='xl'
+                  fw={700}
+                  sx={{ lineHeight: 1 }}
+                >
+                  ${product.price}
+                </Text>
+              </div>
+              <Button
+                radius='xl'
+                style={{ flex: 1 }}
+                onClick={() => addOneToCart(product)}
+              >
+                Add to Cart
+              </Button>
+            </Group>
+          </Card>
         ))}
       </SimpleGrid>
     </Container>
   );
 }
-
