@@ -15,19 +15,18 @@ import axios from "axios";
 export default function Cards({ users, setUsers }) {
   const [currentUser, setCurrentUser] = useState("");
 
-  let arr = [];
+
 
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
+  let arr =[];
   useEffect(() => {
     axios
-      .put(`http://localhost:3500/users/${currentUser.id}`, {
-        ...currentUser,
-        cart: arr,
-      })
+      .put(`http://localhost:3500/users/${currentUser.id}`, currentUser)
       .then((response) => {
+
         console.log(response.data);
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
       })
@@ -38,8 +37,8 @@ export default function Cards({ users, setUsers }) {
     arr = currentUser.cart.filter((item) => item.id !== id);
 
     setCurrentUser({ ...currentUser, cart: arr });
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-    console.log(arr);
   };
 
   return (
