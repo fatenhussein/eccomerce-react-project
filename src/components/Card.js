@@ -9,20 +9,7 @@ import {
 } from "@mantine/core";
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
-import Quantity from "./Quantity" 
-import axios from "axios";
-// const data = {
-//   data: [
-//     {
-//       image: "https://i.imgur.com/ZL52Q2D.png",
-//       item: "Car",
-//       price: "$168.00",
-//       quantity: "1",
-//     },
-//   ],
-// };
-let updateUser;
-let arr = [];
+import Quantity from "./Quantity";
 
 export default function Cards({ users, setUsers }) {
   const [currentUser, setCurrentUser] = useState("");
@@ -30,20 +17,6 @@ export default function Cards({ users, setUsers }) {
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
-
-  const apiUrl = "http://localhost:3500/users";
-  console.log(currentUser.cart);
-
-  // useEffect(() => {
-  //   if (currentUser) {
-  //    updateUser = users.find((user) => user.id === currentUser.id);
-  //    console.log(updateUser.cart)
-  //     localStorage.setItem("currentUser", JSON.stringify(updateUser));
-
-  //   }
-  // }, []);
-
-  // console.log(updateUser);
 
   return (
     <ScrollArea className="card">
@@ -72,15 +45,17 @@ export default function Cards({ users, setUsers }) {
 
               <td>
                 <Anchor component="button" size="sm">
-                 {item.price}
+                  {item.price}
                 </Anchor>
               </td>
               <td>
-                <Text fz="sm" c="dimmed"> <Quantity/></Text>
+                <Text fz="sm" c="dimmed">
+                  {" "}
+                  <Quantity />
+                </Text>
               </td>
               <td>
                 <Group spacing={0} position="right">
-                 
                   <ActionIcon color="red">
                     <IconTrash size="1rem" stroke={1.5} />
                   </ActionIcon>

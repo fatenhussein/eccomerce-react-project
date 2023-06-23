@@ -10,8 +10,6 @@ import {
   rem,
 } from "@mantine/core";
 
-import "../../src/App.css";
-
 const useStyles = createStyles((theme) => ({
   card: {
     height: rem(350),
@@ -40,7 +38,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-
 function Card({ image, title, category }) {
   const { classes } = useStyles();
 
@@ -60,9 +57,6 @@ function Card({ image, title, category }) {
           {title}
         </Title>
       </div>
-      {/* <Button variant='white' color='dark'>
-        Read article
-      </Button> */}
     </Paper>
   );
 }
@@ -92,7 +86,6 @@ const data = [
     title: "Aurora in Norway: when to visit for best experience",
     category: "nature",
   },
-  
 ];
 
 export default function CardsCarousel() {

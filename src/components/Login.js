@@ -102,6 +102,7 @@ export default function AuthenticationForm({
               }
             });
             if (!foundUser) {
+      
               axios
                 .post(apiUrl, newUser)
                 .then((response) => {
