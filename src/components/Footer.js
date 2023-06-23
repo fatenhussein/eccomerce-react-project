@@ -15,12 +15,9 @@ import {
 const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: rem(120),
-    paddingTop: `calc(${theme.spacing.xl} * 2)`,
-    paddingBottom: `calc(${theme.spacing.xl} * 2)`,
-    backgroundColor:
-      theme.colorScheme === 'dark'
-        ? theme.colors.dark[6]
-        : theme.colors.gray[0],
+    // paddingTop: `calc(${theme.spacing.sm} )`,
+    // paddingBottom: `calc(${theme.spacing.sm} )`,
+    backgroundColor:"#e8ded4",
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === 'dark'
         ? theme.colors.dark[5]
@@ -40,11 +37,11 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     marginTop: rem(5),
-
     [theme.fn.smallerThan('sm')]: {
       marginTop: theme.spacing.xs,
       textAlign: 'center',
     },
+    color:"#bc9470"
   },
 
   inner: {
@@ -89,7 +86,7 @@ const useStyles = createStyles((theme) => ({
     fontSize: theme.fontSizes.lg,
     fontWeight: 700,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    marginBottom: `calc(${theme.spacing.xs} / 2)`,
+    // marginBottom: `calc(${theme.spacing.xs} / 2)`,
     color:
       theme.colorScheme === 'dark'
         ? theme.white
@@ -103,6 +100,7 @@ const useStyles = createStyles((theme) => ({
     marginTop: theme.spacing.xl,
     paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl,
+    color:"#bc9470",
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === 'dark'
         ? theme.colors.dark[4]
@@ -145,7 +143,7 @@ export default function FooterLinks({ data }) {
       </Container>
       <Container className={classes.afterFooter}>
         <Text color='dimmed' size='sm'>
-          © 2020 mantine.dev. All rights reserved.
+          © 2023 Timeless Threads. All rights reserved.
         </Text>
 
         <Group

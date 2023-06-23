@@ -16,7 +16,8 @@ import NoPage from './components/NoPage';
 import Card from './components/Card';
 import Profile from './components/Profile';
 import axios from 'axios';
-
+import ContactUs from './components/ContactUs';
+import AboutUs from "./components/AboutUs";
 export default function App() {
   const [isShowIcon, setIsShowIcon] = useState(false);
   
@@ -40,6 +41,7 @@ export default function App() {
             />
             <Route path='products' element={<Producut />} />
             <Route path='profile' element={<Profile />} />
+            <Route path='AboutUs' element={<AboutUs />} />
 
             <Route path='card' element={<Card />} />
             <Route path='*' element={<NoPage />} />
@@ -58,6 +60,7 @@ function Landing() {
         <Hero />
         <Features />
         <Carousels />
+        <ContactUs/>
       </>
     </div>
   );

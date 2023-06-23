@@ -257,6 +257,14 @@
       "address": "",
       "terms": true,
       "id": 18
+    },
+    {
+      "email": "sheraz.ayman@gmail.com",
+      "name": "john",
+      "password": "12345678Sr",
+      "address": "12344 jubaiha",
+      "terms": true,
+      "id": 19
     }
   ]
 }

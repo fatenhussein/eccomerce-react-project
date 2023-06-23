@@ -134,8 +134,9 @@ export function FeaturesCard({ product }) {
         </div>
         <Button
           radius='xl'
-          style={{ flex: 1 }}
+          style={{ flex: 1 ,backgroundColor:"#bc9470"}}
           onClick={() => addOneToCart(product)}
+          
         >
           Add to Cart
         </Button>

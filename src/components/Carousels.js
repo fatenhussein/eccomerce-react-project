@@ -75,28 +75,29 @@ function Card({ image, title, category }) {
 const data = [
   {
     image:
-      "https://i.pinimg.com/564x/8f/d4/69/8fd46976ff6fb683ed379c01a9788e9f.jpg",
+      "https://i.pinimg.com/564x/f3/ec/76/f3ec7679efe1e5163454bf5a2752b276.jpg",
     title: "Vintage Wedding Dresses",
     category: "Coming Soon",
   },
   {
     image:
-      "https://i.pinimg.com/564x/df/4c/75/df4c759d8290ea63f2978c033a8d43fe.jpg",
-    title: "Ballgown Wedding Dresses",
+      "https://i.pinimg.com/564x/b0/ed/90/b0ed903d5411d3cf0b4e94abacaa623e.jpg",
+    title: "Vintage Wedding Dresses",
     category: "Coming Soon",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Mountains at night: 12 best locations to enjoy the view",
-    category: "nature",
+      "https://i.pinimg.com/564x/3c/12/60/3c1260443420cf70775201f721ee0784.jpg",
+    title: "Vintage Wedding Dresses",
+    category: "Coming Soon",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-    title: "Aurora in Norway: when to visit for best experience",
-    category: "nature",
+      "https://i.pinimg.com/564x/8f/d4/69/8fd46976ff6fb683ed379c01a9788e9f.jpg",
+    title: "Vintage Wedding Dresses",
+    category: "Coming Soon",
   },
+  
   
 ];
 
@@ -110,6 +111,9 @@ export default function CardsCarousel() {
   ));
 
   return (
+    <>
+    <h1 style={{textAlign:"center",backgroundColor:"#e8ded4", borderRadius:"20px", padding:"5px", fontFamily:"poppins",color:"#bc9470",maxWidth:"58rem",marginLeft:"auto",marginRight:"auto"}}>Coming soon..</h1>
+
     <Carousel
       slideSize="50%"
       breakpoints={[
@@ -126,5 +130,6 @@ export default function CardsCarousel() {
     >
       {slides}
     </Carousel>
+    </>
   );
 }

@@ -143,21 +143,21 @@ export default function Navbar({
   const { classes, theme } = useStyles();
 
   return (
-    <Box pb={120}>
-      <Header height={60} px='md'>
-        <Group position='apart' sx={{ height: '100%' }}>
+    <Box   >
+      <Header height={60} px='md' style={{backgroundColor:'#e8ded4'}}>
+        <Group position='apart' sx={{ height: '100%' }} >
           {/* <MantineLogo size={30} /> */}
           {/* <NavLink className={classes.link} to='./home'> */}
-          <p>Logo</p>
+          <img src="./pics/logo11.png" alt='logo' style={{height:"60px" , width:"60px"}}/>
           {/* </NavLink> */}
 
           <Group
-            sx={{ height: '100%' }}
+            sx={{ height: '100%'}}
             spacing={0}
             className={classes.hiddenMobile}
           >
-            <NavLink className={classes.link} to='./home'>
-              Home
+            <NavLink style={{color:"#BC9470"}} className={classes.link} to='./home'>
+              Home 
             </NavLink>
             <HoverCard
               width={600}
@@ -169,9 +169,18 @@ export default function Navbar({
 
             <NavLink
               className={classes.link}
-              to='./products'
+              style={{color:"#BC9470"}}
+              to='./products'yy
             >
               Products
+            </NavLink>
+
+            <NavLink
+              className={classes.link}
+              style={{color:"#BC9470"}}
+              to='./AboutUs'yy
+            >
+              About us
             </NavLink>
           </Group>
 
@@ -179,7 +188,7 @@ export default function Navbar({
             {/* <Button variant='default'>Log in</Button> */}
             {!isShowIcon && (
               <NavLink to='./login'>
-                <Button>Sign up</Button>
+                <Button style={{backgroundColor:"#BC9470"}}>Sign up</Button>
               </NavLink>
             )}
             <NavLink className={classes.link} to='./card'>

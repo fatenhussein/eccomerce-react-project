@@ -72,9 +72,9 @@ export default function AuthenticationForm({
   });
 
   return (
-    <Paper radius='md' p='xl' withBorder className='login'>
+    <Paper radius='md' p='lg' withBorder className='login' style={{marginTop:"3rem"}}>
       <Text size='lg' weight={500}>
-        Welcome to Mantine, {type} with
+        Welcome to Timeless Threads, {type} with
       </Text>
       <Divider
         label='Or continue with email'
@@ -154,7 +154,7 @@ export default function AuthenticationForm({
           }
         })}
       >
-        <Stack>
+        <Stack >
           {type === 'register' && (
             <TextInput
               label='Name'
@@ -237,7 +237,7 @@ export default function AuthenticationForm({
           <Anchor
             component='button'
             type='button'
-            color='dimmed'
+            color='#bc9470'
             onClick={() => toggle()}
             size='xs'
           >
@@ -245,7 +245,7 @@ export default function AuthenticationForm({
               ? 'Already have an account? Login'
               : "Don't have an account? Register"}
           </Anchor>
-          <Button type='submit' radius='xl'>
+          <Button type='submit' radius='xl'style={{backgroundColor:'#bc9470'}}>
             {upperFirst(type)}
           </Button>
         </Group>
