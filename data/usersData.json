@@ -6,7 +6,7 @@
       "email": "john@example.com",
       "password": "password123",
       "address": "123 Main Street",
-      "cart": []
+      "cart": ""
     },
     {
       "id": 2,
@@ -14,24 +14,7 @@
       "email": "jane@example.com",
       "password": "secretword",
       "address": "456 Elm Avenue",
-      "cart": [
-        {
-          "id": "3",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Charming vintage dress with a floral print ",
-          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        }
-      ]
+      "cart": []
     },
     {
       "id": 3,
@@ -39,40 +22,7 @@
       "email": "robert@example.com",
       "password": "12345678",
       "address": "789 Oak Road",
-      "cart": [
-        {
-          "id": "3",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Charming vintage dress with a floral print ",
-          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        }
-      ]
+      "cart": ""
     },
     {
       "id": 4,
@@ -80,7 +30,16 @@
       "email": "sarah@example.com",
       "password": "pass1234",
       "address": "987 Pine Lane",
-      "cart": []
+      "cart": [
+        {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        }
+      ]
     },
     {
       "id": 5,
@@ -137,64 +96,7 @@
       "address": "6e56e456",
       "terms": true,
       "id": 11,
-      "cart": [
-        {
-          "id": "1",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
-          "image": "https://i.pinimg.com/564x/4a/1f/64/4a1f6491110d394c2863d7c300330d71.jpg",
-          "quantity": 5
-        },
-        {
-          "id": "2",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
-          "quantity": 3
-        },
-        {
-          "id": "3",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Charming vintage dress with a floral print ",
-          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
-          "quantity": 1
-        },
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        },
-        {
-          "id": "1",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
-          "image": "https://i.pinimg.com/564x/4a/1f/64/4a1f6491110d394c2863d7c300330d71.jpg",
-          "quantity": 5
-        },
-        {
-          "id": "1",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
-          "image": "https://i.pinimg.com/564x/4a/1f/64/4a1f6491110d394c2863d7c300330d71.jpg",
-          "quantity": 5
-        },
-        {
-          "id": "3",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Charming vintage dress with a floral print ",
-          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
-          "quantity": 1
-        }
-      ]
+      "cart": []
     },
     {
       "email": "anas123@gmail.com",
@@ -259,12 +161,67 @@
       "id": 18
     },
     {
-      "email": "sheraz.ayman@gmail.com",
-      "name": "john",
-      "password": "12345678Sr",
-      "address": "12344 jubaiha",
+      "email": "hala@example.com",
+      "name": "hala",
+      "password": "12345678",
+      "address": "12345",
       "terms": true,
+      "cart": [],
       "id": 19
+    },
+    {
+      "email": "abd@example.com",
+      "name": "abd23",
+      "password": "123456789",
+      "address": "1234567",
+      "terms": true,
+      "cart": [],
+      "id": 20
+    },
+    {
+      "email": "abd12@example.com",
+      "name": "faten",
+      "password": "123456789",
+      "address": "123456",
+      "terms": true,
+      "cart": [],
+      "id": 21
+    },
+    {
+      "email": "faten34@example.com",
+      "name": "faten",
+      "password": "ilovedogs",
+      "address": "12345678",
+      "terms": true,
+      "cart": [
+        {
+          "id": "3",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Charming vintage dress with a floral print ",
+          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
+          "quantity": 1
+        }
+      ],
+      "id": 22
+    },
+    {
+      "email": "rana34@example.com",
+      "name": "rana",
+      "password": "ilovedogs",
+      "address": "1213234",
+      "terms": true,
+      "cart": [
+        {
+          "id": "9",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://i.pinimg.com/564x/8a/9c/fe/8a9cfea04ccf56147277bb3ebbbbc52e.jpg",
+          "quantity": 4
+        }
+      ],
+      "id": 23
     }
   ]
 }

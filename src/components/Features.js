@@ -6,55 +6,40 @@ import {
   SimpleGrid,
   createStyles,
   rem,
-} from '@mantine/core';
-import {
-  IconGauge,
-  IconCookie,
-  IconUser,
-  IconMessage2,
-  IconLock,
-} from '@tabler/icons-react';
+} from "@mantine/core";
+import { IconUser } from "@tabler/icons-react";
 
 export const MOCKDATA = [
-  
   {
     icon: IconUser,
-    title: ' Hinata Hyuga ',
+    title: " Hinata Hyuga ",
     description:
-      'Im in love with the stunning vintage dresses I found at Timeless Threads! Their collection is a treasure trove of beautifully preserved garments from different eras. The shops commitment to sustainability and personalized recommendations sets them apart',
+      "Im in love with the stunning vintage dresses I found at Timeless Threads! Their collection is a treasure trove of beautifully preserved garments from different eras. The shops commitment to sustainability and personalized recommendations sets them apart",
   },
   {
     icon: IconUser,
-    title: 'Nezuko Kamado',
+    title: "Nezuko Kamado",
     description:
-      'Timeless Threads offers exceptional quality and a remarkable selection of vintage dresses. The staffs expertise and friendly service make the shopping experience enjoyable and seamless. I highly recommend Timeless Threads for vintage fashion enthusiasts seeking timeless elegance.',
+      "Timeless Threads offers exceptional quality and a remarkable selection of vintage dresses. The staffs expertise and friendly service make the shopping experience enjoyable and seamless. I highly recommend Timeless Threads for vintage fashion enthusiasts seeking timeless elegance.",
   },
   {
     icon: IconUser,
-    title: 'Gigi Hadid',
+    title: "Gigi Hadid",
     description:
-      'Timeless Threads has rekindled my love for vintage fashion. Each visit feels like stepping into a whimsical time capsule. The attention to detail, authenticity of the garments, and the warm staff make it a must-visit for those seeking enchanting and elegant vintage pieces.',
+      "Timeless Threads has rekindled my love for vintage fashion. Each visit feels like stepping into a whimsical time capsule. The attention to detail, authenticity of the garments, and the warm staff make it a must-visit for those seeking enchanting and elegant vintage pieces.",
   },
 ];
 
-export function Feature({
-  icon: Icon,
-  title,
-  description,
-}) {
+export function Feature({ icon: Icon, title, description }) {
   return (
     <div>
       <ThemeIcon  size={40} radius={40} color='#bc9470'>
         <Icon size='1.1rem' stroke={1.5}  />
       </ThemeIcon>
-      <Text mt='sm' mb={7}>
+      <Text mt="sm" mb={7}>
         {title}
       </Text>
-      <Text
-        size='sm'
-        color='dimmed'
-        sx={{ lineHeight: 1.6 }}
-      >
+      <Text size="sm" color="dimmed" sx={{ lineHeight: 1.6 }}>
         {description}
       </Text>
     </div>
@@ -71,28 +56,24 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
     marginBottom: theme.spacing.md,
-    textAlign: 'center',
+    textAlign: "center",
 
-    [theme.fn.smallerThan('sm')]: {
+    [theme.fn.smallerThan("sm")]: {
       fontSize: rem(28),
-      textAlign: 'left',
+      textAlign: "left",
     },
   },
 
   description: {
-    textAlign: 'center',
+    textAlign: "center",
 
-    [theme.fn.smallerThan('sm')]: {
-      textAlign: 'left',
+    [theme.fn.smallerThan("sm")]: {
+      textAlign: "left",
     },
   },
 }));
 
-export default function FeaturesGrid({
-  title,
-  description,
-  data = MOCKDATA,
-}) {
+export default function FeaturesGrid({ title, description, data = MOCKDATA }) {
   const { classes } = useStyles();
   const features = data.map((feature, index) => (
     <Feature {...feature} key={index} />
@@ -105,7 +86,7 @@ export default function FeaturesGrid({
       <Title className={classes.title}>{title}</Title>
 
       <Container size={560} p={0}>
-        <Text size='sm' className={classes.description}>
+        <Text size="sm" className={classes.description}>
           {description}
         </Text>
       </Container>
@@ -115,8 +96,8 @@ export default function FeaturesGrid({
         cols={3}
         spacing={50}
         breakpoints={[
-          { maxWidth: 980, cols: 2, spacing: 'xl' },
-          { maxWidth: 755, cols: 1, spacing: 'xl' },
+          { maxWidth: 980, cols: 2, spacing: "xl" },
+          { maxWidth: 755, cols: 1, spacing: "xl" },
         ]}
       >
         {features}

@@ -19,8 +19,41 @@ import axios from 'axios';
 import ContactUs from './components/ContactUs';
 import AboutUs from "./components/AboutUs";
 export default function App() {
-  const [isShowIcon, setIsShowIcon] = useState(false);
+  const [isShowIcon, setIsShowIcon] = useState(
+    window.localStorage.getItem('isShowIcon')
+  );
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      'isShowIcon',
+      JSON.stringify(isShowIcon)
+    );
+  }, [isShowIcon]);
+
+  const apiUrl = 'http://localhost:3500/users';
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(apiUrl);
+        setUsers(response.data);
+        localStorage.setItem(
+          'users',
+          JSON.stringify(users)
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, []);
+
+
+
+
   
+
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <BrowserRouter>
@@ -36,14 +69,20 @@ export default function App() {
             <Route
               path='login'
               element={
-                <Login setIsShowIcon={setIsShowIcon} />
+                <Login
+                  setIsShowIcon={setIsShowIcon}
+                  users={users}
+                />
               }
             />
-            <Route path='products' element={<Producut />} />
+            <Route
+              path='products'
+              element={<Producut users={users}  setUsers={setUsers}/>}
+            />
             <Route path='profile' element={<Profile />} />
             <Route path='AboutUs' element={<AboutUs />} />
 
-            <Route path='card' element={<Card />} />
+            <Route path='card' element={<Card  users={users}/>} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>

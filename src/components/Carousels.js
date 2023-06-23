@@ -10,8 +10,6 @@ import {
   rem,
 } from "@mantine/core";
 
-import "../../src/App.css";
-
 const useStyles = createStyles((theme) => ({
   card: {
     height: rem(350),
@@ -40,12 +38,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-// interface CardProps {
-//   image: string;
-//   title: string;
-//   category: string;
-// }
-
 function Card({ image, title, category }) {
   const { classes } = useStyles();
 
@@ -65,9 +57,6 @@ function Card({ image, title, category }) {
           {title}
         </Title>
       </div>
-      {/* <Button variant='white' color='dark'>
-        Read article
-      </Button> */}
     </Paper>
   );
 }

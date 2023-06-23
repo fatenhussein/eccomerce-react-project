@@ -137,9 +137,6 @@ export default function FooterLinks({ data }) {
           </Text>
         </div>
         <div className={classes.groups}></div>
-        {/* <h4>About</h4>
-        <h4>Project</h4>
-        <h4>Community</h4> */}
       </Container>
       <Container className={classes.afterFooter}>
         <Text color='dimmed' size='sm'>
