@@ -46,16 +46,12 @@ export default function App() {
       }
     }
     fetchData();
-  }, []);
+  }, [users]);
 
-  const updateUsers = () => {
-    const getSUsers = async () => {
-      const res = await axios.get(apiUrl);
-      setUsers(res.data);
-    };
 
-    getSUsers();
-  };
+
+
+  
 
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
@@ -80,11 +76,11 @@ export default function App() {
             />
             <Route
               path='products'
-              element={<Producut users={users} />}
+              element={<Producut users={users}  setUsers={setUsers}/>}
             />
             <Route path='profile' element={<Profile />} />
 
-            <Route path='card' element={<Card />} />
+            <Route path='card' element={<Card  users={users}/>} />
             <Route path='*' element={<NoPage />} />
           </Route>
         </Routes>

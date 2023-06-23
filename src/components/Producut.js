@@ -11,7 +11,6 @@ import { SimpleGrid, Container } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../src/App.css';
-
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
@@ -55,58 +54,36 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function FeaturesCard({ product }) {
+// export function FeaturesCard({ product }) {
+//   const { classes } = useStyles();
+// }
+
+export default function Subgrid() {
+  const [cart, setCart] = useState('');
   const { classes } = useStyles();
   const [currentUser, setCurrentUser] = useState('');
-
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     setCurrentUser(
       JSON.parse(localStorage.getItem('currentUser'))
     );
   }, []);
-
-  // return (
-  // <Card withBorder radius='md' className='product'>
-  //   <Card.Section className={classes.imageSection}>
-  //     <Image src={product.image} alt={product.title} />
-  //   </Card.Section>
-
-  //   <Group position='apart' mt='md'>
-  //     <div>
-  //       <Text fw={500}>{product.title}</Text>
-  //       <Text fz='xs' c='dimmed'>
-  //         {product.description}
-  //       </Text>
-  //     </div>
-  //   </Group>
-
-  //   <Group spacing={30} mt={20}>
-  //     <div>
-  //       <Text fz='xl' fw={700} sx={{ lineHeight: 1 }}>
-  //         ${product.price}
-  //       </Text>
-  //     </div>
-  //     <Button
-  //       radius='xl'
-  //       style={{ flex: 1 }}
-  //       onClick={() => addOneToCart(product.id)}
-  //     >
-  //       Add to Cart
-  //     </Button>
-  //   </Group>
-  // </Card>
-  // )
-}
-
-export default function Subgrid() {
-  const [x, setX] = useState('');
-  const { classes } = useStyles();
-
-  const [products, setProducts] = useState([]);
   const addOneToCart = (product) => {
-    setX((x) => [...x, product]);
-    console.log(x);
+    setCart((cart) => [...cart, product]);
+    axios
+      .put(
+        `http://localhost:3500/users/${currentUser.id}`,
+        {
+          ...currentUser,
+          cart: cart,
+        }
+      )
+      .then((response) => console.log(response.data))
+      .catch((error) => console.error(error));
+    console.log(cart);
+    console.log(cart);
   };
+
   useEffect(() => {
     axios
       .get('http://localhost:3501/products')

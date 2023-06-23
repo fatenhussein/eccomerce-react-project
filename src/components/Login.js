@@ -20,12 +20,16 @@ import "../../src/App.css";
 import { useEffect, useState } from "react";
 import { Navigate, json, useNavigate } from "react-router-dom";
 
-export default function AuthenticationForm({ setIsShowIcon, users  , updateUsers}) {
+export default function AuthenticationForm({
+  setIsShowIcon,
+  users,
+  
+  setUsers
+}) {
   const navigate = useNavigate();
   const [isShowAlert, setIsShowAlert] = useState(false);
   const [isExist, setIsisExist] = useState(false);
 
-  
   const apiUrl = "http://localhost:3500/users";
 
   const [type, toggle] = useToggle(["login", "register"]);
@@ -89,7 +93,7 @@ export default function AuthenticationForm({ setIsShowIcon, users  , updateUsers
               password: form.values.password,
               address: form.values.address,
               terms: true,
-              cart:[]
+              cart: [],
             };
             users.forEach((user) => {
               if (user.email === form.values.email) {

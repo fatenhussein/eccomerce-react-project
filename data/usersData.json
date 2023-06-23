@@ -9,7 +9,12 @@
       "cart": []
     },
     {
-      "id": 2
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "secretword",
+      "address": "456 Elm Avenue",
+      "cart": []
     },
     {
       "id": 3,
@@ -17,7 +22,40 @@
       "email": "robert@example.com",
       "password": "12345678",
       "address": "789 Oak Road",
-      "cart": []
+      "cart": [
+        {
+          "id": "10",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://i.pinimg.com/564x/b3/c3/93/b3c393091d7e5ef43249d649ca9bc528.jpg",
+          "quantity": 3
+        },
+        {
+          "id": "5",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Romantic vintage-inspired chiffon dress with delicate ruffles and a flowy silhouette. ",
+          "image": "https://i.pinimg.com/564x/2c/cf/85/2ccf858104b9bbdcc45565a5ccb1e97c.jpg",
+          "quantity": 6
+        },
+        {
+          "id": "5",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Romantic vintage-inspired chiffon dress with delicate ruffles and a flowy silhouette. ",
+          "image": "https://i.pinimg.com/564x/2c/cf/85/2ccf858104b9bbdcc45565a5ccb1e97c.jpg",
+          "quantity": 6
+        },
+        {
+          "id": "7",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
+          "image": "https://i.pinimg.com/564x/d9/c4/61/d9c461f8c8c603d99ca5514e7a08b78e.jpg",
+          "quantity": 6
+        }
+      ]
     },
     {
       "id": 4,
@@ -25,7 +63,40 @@
       "email": "sarah@example.com",
       "password": "pass1234",
       "address": "987 Pine Lane",
-      "cart": []
+      "cart": [
+        {
+          "id": "5",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Romantic vintage-inspired chiffon dress with delicate ruffles and a flowy silhouette. ",
+          "image": "https://i.pinimg.com/564x/2c/cf/85/2ccf858104b9bbdcc45565a5ccb1e97c.jpg",
+          "quantity": 6
+        },
+        {
+          "id": "9",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://i.pinimg.com/564x/8a/9c/fe/8a9cfea04ccf56147277bb3ebbbbc52e.jpg",
+          "quantity": 4
+        },
+        {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        },
+        {
+          "id": "4",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
+          "quantity": 2
+        }
+      ]
     },
     {
       "id": 5,
@@ -154,6 +225,42 @@
       "terms": true,
       "cart": [],
       "id": 19
+    },
+    {
+      "email": "abd@example.com",
+      "name": "abd23",
+      "password": "123456789",
+      "address": "1234567",
+      "terms": true,
+      "cart": [],
+      "id": 20
+    },
+    {
+      "email": "abd12@example.com",
+      "name": "faten",
+      "password": "123456789",
+      "address": "123456",
+      "terms": true,
+      "cart": [],
+      "id": 21
+    },
+    {
+      "email": "faten34@example.com",
+      "name": "faten",
+      "password": "ilovedogs",
+      "address": "12345678",
+      "terms": true,
+      "cart": [],
+      "id": 22
+    },
+    {
+      "email": "rana34@example.com",
+      "name": "rana",
+      "password": "ilovedogs",
+      "address": "1213234",
+      "terms": true,
+      "cart": "",
+      "id": 23
     }
   ]
 }

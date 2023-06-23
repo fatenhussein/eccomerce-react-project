@@ -1,12 +1,11 @@
-import { Avatar, Text, Button, Paper } from '@mantine/core';
+import { Avatar, Text, Button, Paper } from "@mantine/core";
 
 export default function UserInfoAction() {
-  // person["lastName"]
-  const myUser = JSON.parse(localStorage.getItem('currentUser'))
+  const myUser = JSON.parse(localStorage.getItem("currentUser"));
   console.log(myUser);
-const name=myUser.name;
-const email=myUser.email;
-const address = myUser.address
+  const name = myUser.name;
+  const email = myUser.email;
+  const address = myUser.address;
   return (
     <Paper
       className="profile"
@@ -15,7 +14,7 @@ const address = myUser.address
       p="lg"
       sx={(theme) => ({
         backgroundColor:
-          theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+          theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
       })}
     >
       <Avatar
@@ -28,15 +27,15 @@ const address = myUser.address
         {name}
       </Text>
       <Text ta="center" c="dimmed" fz="sm">
-       {email}
+        {email}
       </Text>
       <Text ta="center" c="dimmed" fz="sm">
-    {address}
+        {address}
       </Text>
 
       {/* <Button variant="default" fullWidth mt="md">
         Edite
       </Button> */}
     </Paper>
-  )
+  );
 }
