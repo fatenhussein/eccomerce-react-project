@@ -10,13 +10,37 @@ import {
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import Quantity from "./Quantity";
+import axios from "axios";
 
 export default function Cards({ users, setUsers }) {
   const [currentUser, setCurrentUser] = useState("");
 
+  let arr = [];
+
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
+
+  useEffect(() => {
+    axios
+      .put(`http://localhost:3500/users/${currentUser.id}`, {
+        ...currentUser,
+        cart: arr,
+      })
+      .then((response) => {
+        console.log(response.data);
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+      })
+      .catch((error) => console.error(error));
+  }, [currentUser]);
+
+  const deleteCart = (id) => {
+    arr = currentUser.cart.filter((item) => item.id !== id);
+
+    setCurrentUser({ ...currentUser, cart: arr });
+
+    console.log(arr);
+  };
 
   return (
     <ScrollArea className="card">
@@ -57,7 +81,11 @@ export default function Cards({ users, setUsers }) {
               <td>
                 <Group spacing={0} position="right">
                   <ActionIcon color="red">
-                    <IconTrash size="1rem" stroke={1.5} />
+                    <IconTrash
+                      size="1rem"
+                      stroke={1.5}
+                      onClick={() => deleteCart(item.id)}
+                    />
                   </ActionIcon>
                 </Group>
               </td>

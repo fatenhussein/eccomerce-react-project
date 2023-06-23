@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../src/App.css";
 import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
-import { GithubIcon } from '@mantine/ds';
+
 
 const useStyles = createStyles((theme) => ({
   wrapper: {

@@ -316,80 +316,7 @@
       "address": "1233",
       "terms": true,
       "id": 12,
-      "cart": [
-        {
-          "id": "9",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
-          "image": "https://i.pinimg.com/564x/8a/9c/fe/8a9cfea04ccf56147277bb3ebbbbc52e.jpg",
-          "quantity": 4
-        },
-        {
-          "id": "8",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/1b/50/1a/1b501a04f89cc3112c13391cb1e0cf41.jpg",
-          "quantity": 5
-        },
-        {
-          "id": "6",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Adorable vintage-inspired swing dress with a sweetheart neckline ,flared skirt and flirty retro look",
-          "image": "https://i.pinimg.com/564x/7d/52/16/7d521618f5a8a6e0ba0722fdfad2e6e3.jpg",
-          "quantity": 7
-        },
-        {
-          "id": "5",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Romantic vintage-inspired chiffon dress with delicate ruffles and a flowy silhouette. ",
-          "image": "https://i.pinimg.com/564x/2c/cf/85/2ccf858104b9bbdcc45565a5ccb1e97c.jpg",
-          "quantity": 6
-        },
-        {
-          "id": "12",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
-          "image": "https://i.pinimg.com/564x/c7/d1/69/c7d1692c3c26aba1e3b3862eb446063f.jpg",
-          "quantity": 8
-        },
-        {
-          "id": "11",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt..",
-          "image": "https://i.pinimg.com/564x/47/b1/82/47b182a938e958ce0d7afab084c7d478.jpg",
-          "quantity": 9
-        },
-        {
-          "id": "10",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
-          "image": "https://i.pinimg.com/564x/b3/c3/93/b3c393091d7e5ef43249d649ca9bc528.jpg",
-          "quantity": 3
-        },
-        {
-          "id": "7",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
-          "image": "https://i.pinimg.com/564x/d9/c4/61/d9c461f8c8c603d99ca5514e7a08b78e.jpg",
-          "quantity": 6
-        },
-        {
-          "id": "9",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
-          "image": "https://i.pinimg.com/564x/8a/9c/fe/8a9cfea04ccf56147277bb3ebbbbc52e.jpg",
-          "quantity": 4
-        }
-      ]
+      "cart": []
     },
     {
       "email": "shishi123@gmail.com",
@@ -456,8 +383,7 @@
       "password": "faten123453",
       "address": "4e56e456",
       "terms": true,
-      "id": 15,
-      "cart": []
+      "id": 15
     },
     {
       "email": "john@example.comasdasd",
