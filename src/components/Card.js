@@ -10,73 +10,45 @@ import {
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-const data = {
-  data: [
-    {
-      image: "https://i.imgur.com/ZL52Q2D.png",
-      item: "Car",
-      price: "$168.00",
-      quantity: "1",
-    },
-  ],
-};
+// const data = {
+//   data: [
+//     {
+//       image: "https://i.imgur.com/ZL52Q2D.png",
+//       item: "Car",
+//       price: "$168.00",
+//       quantity: "1",
+//     },
+//   ],
+// };
+let updateUser;
+let arr = [];
 
-export default function Cards({users}) {
+
+export default function Cards({users , setUsers}) {
   const [currentUser, setCurrentUser] = useState("");
+
+
+
 
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
-
-  
-// const updatUser = users.find((user)=>user.id === currentUser.id);
-// useEffect (()=>{
-//   axios.get(`http://localhost:3500/users/${updatUser.id}`)
-//   .then((response) => {
-//     const user = response.data;
-//     console.log(user);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-// },[])
+  const apiUrl = "http://localhost:3500/users";
+console.log(currentUser.cart);
 
 
+  // useEffect(() => {
+  //   if (currentUser) {
+  //    updateUser = users.find((user) => user.id === currentUser.id);
+  //    console.log(updateUser.cart)
+  //     localStorage.setItem("currentUser", JSON.stringify(updateUser));
+    
+  //   }
+  // }, []);
 
-  const rows = data.data.map((item) => (
-    <tr key={item.item}>
-      <td>
-        <Group spacing="sm">
-          <Avatar size={100} src={item.image} radius={15} />
-          <Text fz="sm" fw={500}>
-            {item.item}
-          </Text>
-        </Group>
-      </td>
-
-      <td>
-        <Anchor component="button" size="sm">
-          {item.price}
-        </Anchor>
-      </td>
-      <td>
-        <Text fz="sm" c="dimmed">
-          {item.quantity}
-        </Text>
-      </td>
-      <td>
-        <Group spacing={0} position="right">
-          <ActionIcon>
-            <IconPencil size="1rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon color="red">
-            <IconTrash size="1rem" stroke={1.5} />
-          </ActionIcon>
-        </Group>
-      </td>
-    </tr>
-  ));
+ 
+  // console.log(updateUser);
 
   return (
     <ScrollArea className="card">
@@ -91,7 +63,43 @@ export default function Cards({users}) {
             <th />
           </tr>
         </thead>
-        <tbody>{rows}</tbody>
+        { currentUser.cart ? currentUser.cart.map((item) => (
+  <tr key={item.id}>
+    <td>
+      <Group spacing="sm">
+        <Avatar size={100} src={item.image} radius={15} />
+        <Text fz="sm" fw={500}>
+          {item.id}
+        </Text>
+      </Group>
+    </td>
+
+    <td>
+      <Anchor component="button" size="sm">
+        {item.price}
+      </Anchor>
+    </td>
+    <td>
+      <Text fz="sm" c="dimmed">
+     
+      </Text>
+    </td>
+    <td>
+      <Group spacing={0} position="right">
+        <ActionIcon>
+          <IconPencil size="1rem" stroke={1.5} />
+        </ActionIcon>
+        <ActionIcon color="red">
+          <IconTrash size="1rem" stroke={1.5} />
+        </ActionIcon>
+      </Group>
+    </td>
+  </tr>
+
+))
+:<h1></h1>
+
+}
       </Table>
     </ScrollArea>
   );

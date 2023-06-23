@@ -52,7 +52,7 @@ const useStyles = createStyles((theme) => ({
 //   const { classes } = useStyles();
 // }
 
-export default function Subgrid() {
+export default function Subgrid({users , setUsers}) {
   const [cart, setCart] = useState("");
   const { classes } = useStyles();
   const [currentUser, setCurrentUser] = useState("");
@@ -60,17 +60,22 @@ export default function Subgrid() {
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
+
+
+
+
   const addOneToCart = (product) => {
     setCart((cart) => [...cart, product]);
+    setCurrentUser({...currentUser, cart: cart })
+    localStorage.setItem("currentUser", JSON.stringify(currentUser))
     axios
       .put(`http://localhost:3500/users/${currentUser.id}`, {
         ...currentUser,
         cart: cart,
       })
-      .then((response) => console.log(response.data))
+      .then((response) =>console.log(response))
       .catch((error) => console.error(error));
-    console.log(cart);
-    console.log(cart);
+   
   };
 
   useEffect(() => {
