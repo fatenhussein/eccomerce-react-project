@@ -21,28 +21,26 @@ const data = {
   ],
 };
 
-export default function Cards(handelClick) {
+export default function Cards({users}) {
   const [currentUser, setCurrentUser] = useState("");
 
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
-//   axios
-//   .get(`http://localhost:3500/users/${currentUser.id}`, currentUser)
-//   .then((response) =>
-//     console.log(response)
-//   )
-//   .catch((error) => console.error(error));
 
- 
-// };
-useEffect (()=>{
-  axios.get(`http://localhost:3500/users`)
-  .then(function (response) {
-    console.log(response);
-  })
-},[])
+  
+// const updatUser = users.find((user)=>user.id === currentUser.id);
+// useEffect (()=>{
+//   axios.get(`http://localhost:3500/users/${updatUser.id}`)
+//   .then((response) => {
+//     const user = response.data;
+//     console.log(user);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+// },[])
 
 
 

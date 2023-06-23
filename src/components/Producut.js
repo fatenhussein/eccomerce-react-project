@@ -11,7 +11,6 @@ import { SimpleGrid, Container } from "@mantine/core";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../../src/App.css";
-
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
@@ -49,77 +48,30 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+// export function FeaturesCard({ product }) {
+//   const { classes } = useStyles();
+// }
 
-
-
-
-let newCart = [];
-export function FeaturesCard({ product }) {
+export default function Subgrid() {
+  const [cart, setCart] = useState("");
   const { classes } = useStyles();
   const [currentUser, setCurrentUser] = useState("");
-
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
- 
-  
-
   const addOneToCart = (product) => {
-    newCart = [...newCart, product];
-
-
-
-    setCurrentUser({...currentUser, cart:newCart });
-
-    console.log(currentUser);
+    setCart((cart) => [...cart, product]);
     axios
-      .put(`http://localhost:3500/users/${currentUser.id}`, currentUser)
-      .then((response) =>
-      console.log(response.data)
-      )
+      .put(`http://localhost:3500/users/${currentUser.id}`, {
+        ...currentUser,
+        cart: cart,
+      })
+      .then((response) => console.log(response.data))
       .catch((error) => console.error(error));
-
+    console.log(cart);
+    console.log(cart);
   };
-
-
-
-
-
-  return (
-    <Card withBorder radius="md" className="product">
-      <Card.Section className={classes.imageSection}>
-        <Image src={product.image} alt={product.title} />
-      </Card.Section>
-
-      <Group position="apart" mt="md">
-        <div>
-          <Text fw={500}>{product.title}</Text>
-          <Text fz="xs" c="dimmed">
-            {product.description}
-          </Text>
-        </div>
-      </Group>
-
-      <Group spacing={30} mt={20}>
-        <div>
-          <Text fz="xl" fw={700} sx={{ lineHeight: 1 }}>
-            ${product.price}
-          </Text>
-        </div>
-        <Button
-          radius="xl"
-          style={{ flex: 1 }}
-          onClick={() => addOneToCart(product)}
-        >
-          Add to Cart
-        </Button>
-      </Group>
-    </Card>
-  );
-}
-
-export default function Subgrid() {
-  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios
@@ -143,10 +95,37 @@ export default function Subgrid() {
         ]}
       >
         {products.map((product) => (
-          <FeaturesCard key={product.id} product={product} />
+          <Card withBorder radius="md" className="product">
+            <Card.Section className={classes.imageSection}>
+              <Image src={product.image} alt={product.title} />
+            </Card.Section>
+
+            <Group position="apart" mt="md">
+              <div>
+                <Text fw={500}>{product.title}</Text>
+                <Text fz="xs" c="dimmed">
+                  {product.description}
+                </Text>
+              </div>
+            </Group>
+
+            <Group spacing={30} mt={20}>
+              <div>
+                <Text fz="xl" fw={700} sx={{ lineHeight: 1 }}>
+                  ${product.price}
+                </Text>
+              </div>
+              <Button
+                radius="xl"
+                style={{ flex: 1 }}
+                onClick={() => addOneToCart(product)}
+              >
+                Add to Cart
+              </Button>
+            </Group>
+          </Card>
         ))}
       </SimpleGrid>
     </Container>
   );
 }
-
