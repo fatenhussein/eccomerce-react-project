@@ -79,32 +79,10 @@ export default function HeroBullets() {
             Unleash your heroic style with Timeless Threads, Where vintage charm meets timeless elegance, creating fashion magic that lasts a lifetime. Step into our curated collection of vintage dresses and embrace the allure of the past while making a statement that transcends time.
             </Text>
 
-            {/* <List
-              mt={30}
-              spacing="sm"
-              size="sm"
-              icon={
-                <ThemeIcon size={20} radius="xl">
-                  <IconCheck size={rem(12)} stroke={1.5} />
-                </ThemeIcon>
-              }
-            >
-              <List.Item>
-                <b>TypeScript based</b> – build type safe applications, all components and hooks
-                export types
-              </List.Item>
-              <List.Item>
-                <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-                any project
-              </List.Item>
-              <List.Item>
-                <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-                keyboard
-              </List.Item>
-            </List> */}
-
             <Group mt={30}>
-              <Button radius="md" size="md" style={{backgroundColor:"#BC9470"}} >
+              <Button radius="md" size="md" style={{backgroundColor:"#BC9470"}} variant="gradient"
+            border="md"
+            gradient={{ from: '#bc9470', to: 'beige' }} >
                 Start shopping
               </Button>
             </Group>

@@ -126,15 +126,15 @@ export default function FooterLinks({ data }) {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <h4>Logo</h4>
-          <Text
+        <img src="./pics/logo11.png" alt='logo' style={{height:"60px" , width:"60px",marginTop:"1rem"}}/>
+          {/* <Text
             size='xs'
             color='dimmed'
             className={classes.description}
           >
             Build fully functional accessible web
             applications faster than ever
-          </Text>
+          </Text> */}
         </div>
         <div className={classes.groups}></div>
       </Container>

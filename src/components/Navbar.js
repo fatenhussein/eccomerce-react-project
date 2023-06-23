@@ -236,6 +236,10 @@ export default function Navbar({
             Products
           </NavLink>
 
+          <NavLink className={classes.link} to='./AboutUs'>
+            About us
+          </NavLink>
+
           <Divider
             my='sm'
             color={

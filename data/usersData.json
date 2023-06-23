@@ -486,13 +486,54 @@
       "id": 18
     },
     {
-      "email": "hala@example.com",
-      "name": "hala",
-      "password": "12345678",
-      "address": "12345",
+      "email": "sheraz.ayman@gmail.com",
+      "name": "john",
+      "password": "12345678Sr",
+      "address": "12344 jubaiha",
       "terms": true,
-      "cart": [],
-      "id": 19
+      "id": 19,
+      "cart": [
+        {
+          "id": "9",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://i.pinimg.com/564x/8a/9c/fe/8a9cfea04ccf56147277bb3ebbbbc52e.jpg",
+          "quantity": 4
+        },
+        {
+          "id": "10",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://i.pinimg.com/564x/b3/c3/93/b3c393091d7e5ef43249d649ca9bc528.jpg",
+          "quantity": 3
+        },
+        {
+          "id": "12",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://1.bp.blogspot.com/-RG9AA73J4xM/XSDjKKjf4aI/AAAAAAAAW_g/Z8b7vAPe0Pcz56Sp2UM2roAJMPTfhbi9ACLcBGAs/s640/2019-05-07%2B%25287%2Bof%2B14%2529.jpg",
+          "quantity": 8
+        },
+        {
+          "id": "6",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Adorable vintage-inspired swing dress with a sweetheart neckline ,flared skirt and flirty retro look",
+          "image": "https://1.bp.blogspot.com/-1j_xy3sT_Q8/XSDhjTTGaOI/AAAAAAAAW-I/MDoncM4gKdUHw9ThMLaQN3TQhqG0ThRbwCLcBGAs/s640/2019-05-06%2B%252820%2Bof%2B30%2529.jpg",
+          "quantity": 7
+        },
+        {
+          "id": "8",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Adorable vintage-inspired swing dress with a sweetheart neckline ,flared skirt and flirty retro look",
+          "image": "https://1.bp.blogspot.com/-Wr80MT3tIQ0/XSDhmZO6SXI/AAAAAAAAW-Y/woY2IUQb0CQ4MlaRoD6Iq4ad_V-yZIxogCLcBGAs/s640/2019-05-06%2B%252827%2Bof%2B30%2529.jpg",
+          "quantity": 5
+        }
+      ]
     },
     {
       "email": "abd@example.com",
@@ -555,6 +596,33 @@
         }
       ],
       "id": 23
+    },
+    {
+      "email": "sheraz.ayman@gmail.com",
+      "name": "sheraz ayman",
+      "password": "12345678Sr",
+      "address": "12344 jubaiha",
+      "terms": true,
+      "cart": [],
+      "id": 24
+    },
+    {
+      "email": "sheraz.ayman@gmail.com",
+      "name": "john",
+      "password": "12345678Sr",
+      "address": "12344 jubaiha",
+      "terms": true,
+      "cart": [],
+      "id": 25
+    },
+    {
+      "email": "sheshe@gmail.com",
+      "name": "sheshe",
+      "password": "12345678Sr",
+      "address": "1234 irbid",
+      "terms": true,
+      "cart": [],
+      "id": 26
     }
   ]
 }

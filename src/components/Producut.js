@@ -96,8 +96,8 @@ export default function Subgrid({ users, setUsers }) {
   }, []);
 
   return (
-    <Container my="md">
-      <h1>Shop here </h1>
+    <Container my='md'>
+      <h1  style={{fontFamily:"poppins",color:"#bc9470"}}>Shop here </h1>
       <SimpleGrid
         cols={4}
         breakpoints={[
@@ -130,6 +130,9 @@ export default function Subgrid({ users, setUsers }) {
                 radius="xl"
                 style={{ flex: 1 }}
                 onClick={() => addOneToCart(product)}
+                variant="gradient"
+                border="md"
+                gradient={{ from: '#bc9470', to: 'beige' }}
               >
                 Add to Cart
               </Button>
