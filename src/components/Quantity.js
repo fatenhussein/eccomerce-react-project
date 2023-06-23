@@ -26,7 +26,7 @@ export default function Quantity() {
         onChange={(val) => setValue(val)}
         handlersRef={handlers}
         max={10}
-        min={0}
+        min={1}
         step={1}
         styles={{
           input: { width: rem(40), textAlign: 'center' },

@@ -81,36 +81,36 @@
       "address": "789 Oak Road",
       "cart": [
         {
-          "id": "10",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
-          "image": "https://i.pinimg.com/564x/b3/c3/93/b3c393091d7e5ef43249d649ca9bc528.jpg",
-          "quantity": 3
-        },
-        {
-          "id": "5",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Romantic vintage-inspired chiffon dress with delicate ruffles. ",
-          "image": "https://1.bp.blogspot.com/-pT-KWwiR2Fg/XSDTV8ECd9I/AAAAAAAAW2I/ZlQcQQ3tfVcVFG-x_cG7NxCiBdCbaOJdwCLcBGAs/s640/2019-07-03%2B%252814%2Bof%2B50%2529.jpg",
-          "quantity": 6
-        },
-        {
-          "id": "11",
-          "title": "Vintage dress",
-          "price": "99.99",
-          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt..",
-          "image": "https://1.bp.blogspot.com/-luHyL97IAlk/XSDgXZrdUdI/AAAAAAAAW9Y/XxpaCYbGgpgLYC7f-oZFWcOmYgdfBSFOwCEwYBhgL/s640/2019-06-03%2B%25281%2Bof%2B47%2529.jpg",
-          "quantity": 9
-        },
-        {
           "id": "9",
           "title": "Vintage dress",
           "price": "99.99",
           "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
           "image": "https://i.pinimg.com/564x/8a/9c/fe/8a9cfea04ccf56147277bb3ebbbbc52e.jpg",
           "quantity": 4
+        },
+        {
+          "id": "3",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Charming vintage dress with a floral print ",
+          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "12",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Beautiful vintage-style floral dress with a cinched waist and a flowing midi-length skirt.",
+          "image": "https://1.bp.blogspot.com/-RG9AA73J4xM/XSDjKKjf4aI/AAAAAAAAW_g/Z8b7vAPe0Pcz56Sp2UM2roAJMPTfhbi9ACLcBGAs/s640/2019-05-07%2B%25287%2Bof%2B14%2529.jpg",
+          "quantity": 8
+        },
+        {
+          "id": "7",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
+          "image": "https://i.pinimg.com/564x/d9/c4/61/d9c461f8c8c603d99ca5514e7a08b78e.jpg",
+          "quantity": 6
         }
       ]
     },
@@ -120,7 +120,16 @@
       "email": "sarah@example.com",
       "password": "pass1234",
       "address": "987 Pine Lane",
-      "cart": []
+      "cart": [
+        {
+          "id": "3",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Charming vintage dress with a floral print ",
+          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
+          "quantity": 1
+        }
+      ]
     },
     {
       "id": 5,
