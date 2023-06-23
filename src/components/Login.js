@@ -23,8 +23,8 @@ import { Navigate, json, useNavigate } from "react-router-dom";
 export default function AuthenticationForm({
   setIsShowIcon,
   users,
-  
-  setUsers
+
+  setUsers,
 }) {
   const navigate = useNavigate();
   const [isShowAlert, setIsShowAlert] = useState(false);
@@ -50,6 +50,8 @@ export default function AuthenticationForm({
           : null,
     },
   });
+
+  useEffect(() => {}, []);
 
   return (
     <Paper radius="md" p="xl" withBorder className="login">
@@ -102,7 +104,6 @@ export default function AuthenticationForm({
               }
             });
             if (!foundUser) {
-      
               axios
                 .post(apiUrl, newUser)
                 .then((response) => {
@@ -182,9 +183,9 @@ export default function AuthenticationForm({
 
         <Group position="apart" mt="xl">
           <Anchor
-            component='button'
-            type='button'
-            color='#bc9470'
+            component="button"
+            type="button"
+            color="#bc9470"
             onClick={() => toggle()}
             size="xs"
           >
@@ -192,7 +193,11 @@ export default function AuthenticationForm({
               ? "Already have an account? Login"
               : "Don't have an account? Register"}
           </Anchor>
-          <Button type='submit' radius='xl'style={{backgroundColor:'#bc9470'}}>
+          <Button
+            type="submit"
+            radius="xl"
+            style={{ backgroundColor: "#bc9470" }}
+          >
             {upperFirst(type)}
           </Button>
         </Group>
