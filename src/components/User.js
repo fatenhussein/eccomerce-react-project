@@ -30,49 +30,38 @@ export default function UserMenu({ setIsShowIcon }) {
   }, []);
 
   return (
-    <Group position='center'>
+    <Group position="center">
       <Menu
         withArrow
         width={300}
-        position='bottom'
+        position="bottom"
         transitionProps={{ transition: 'pop' }}
         withinPortal
       >
         <Menu.Target>
           <ActionIcon>
-            <IconSettings
-              size='1.5rem'
-              stroke={2}
-              color='#333'
-            />
+            <IconSettings size="1.5rem" stroke={2} color="#333" />
           </ActionIcon>
         </Menu.Target>
         <Menu.Dropdown>
           <Link
-            to='profile'
+            to="profile"
             // onClick={() => setIsShowIcon(false)}
           >
             <Menu.Item
-              rightSection={
-                <IconChevronRight
-                  size='1.2rem'
-                  stroke={1.5}
-                />
-              }
+              rightSection={<IconChevronRight size="1.2rem" stroke={1.5} />}
               // onClick={() => navigate('/')}
             >
               <Group>
                 <Avatar
-                  radius='xl'
-                  src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+                  radius="xl"
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                 />
 
                 {currentUser && (
                   <div>
-                    <Text weight={500}>
-                      {currentUser.name}
-                    </Text>
-                    <Text size='xs' color='dimmed'>
+                    <Text weight={500}>{currentUser.name}</Text>
+                    <Text size="xs" color="dimmed">
                       {currentUser.email}
                     </Text>
                   </div>
@@ -86,18 +75,28 @@ export default function UserMenu({ setIsShowIcon }) {
           <Menu.Label>Settings</Menu.Label>
 
           <Menu.Item
-            icon={<IconLogout size='0.9rem' stroke={1.5} />}
-            onClick={() => {
-              localStorage.removeItem('currentUser');
+            icon={<IconLogout size="0.9rem" stroke={1.5} />}
+            onClick={
+           
+              () => {
 
-              navigate('/login');
-              setIsShowIcon(false);
-            }}
+                  
+                localStorage.removeItem('currentUser')
+
+                navigate('/login')
+                  
+                setIsShowIcon(false)
+            
+                     
+              }
+           
+         
+            }
           >
             Logout
           </Menu.Item>
         </Menu.Dropdown>
       </Menu>
     </Group>
-  );
+  )
 }

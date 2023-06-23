@@ -34,13 +34,22 @@ export default function Cards({ users, setUsers }) {
   }, [currentUser]);
 
   const deleteCart = (id) => {
+
     arr = currentUser.cart.filter((item) => item.id !== id);
 
     setCurrentUser({ ...currentUser, cart: arr });
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
+   setTimeout(function () {
+     window.location.reload()
+   }, 50)
   };
 
+
+  //   function deleteeee() {
+  // window.location.reload(false)
+  //   }
+ 
   return (
     <ScrollArea className="card">
       <h1>cart</h1>
