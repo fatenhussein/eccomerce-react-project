@@ -14,9 +14,9 @@ import {
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: rem(120),
-    // paddingTop: `calc(${theme.spacing.sm} )`,
-    // paddingBottom: `calc(${theme.spacing.sm} )`,
+    marginTop: rem(80),
+    paddingTop: `calc(${theme.spacing.sm} )`,
+    paddingBottom: `calc(${theme.spacing.sm} )`,
     backgroundColor:"#e8ded4",
     borderTop: `${rem(1)} solid ${
       theme.colorScheme === 'dark'
@@ -123,18 +123,10 @@ export default function FooterLinks({ data }) {
   const { classes } = useStyles();
 
   return (
-    <footer className={classes.footer}>
+    <footer className={classes.footer} style={{position:"relative", bottom:"0",width:"100%",}}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
         <img src="./pics/logo11.png" alt='logo' style={{height:"60px" , width:"60px",marginTop:"1rem"}}/>
-          {/* <Text
-            size='xs'
-            color='dimmed'
-            className={classes.description}
-          >
-            Build fully functional accessible web
-            applications faster than ever
-          </Text> */}
         </div>
         <div className={classes.groups}></div>
       </Container>

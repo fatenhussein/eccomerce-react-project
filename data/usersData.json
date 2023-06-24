@@ -681,6 +681,24 @@
       "terms": true,
       "cart": [],
       "id": 27
+    },
+    {
+      "email": "sheraz@gmail.com",
+      "name": "sheraz",
+      "password": "12345678Sr",
+      "address": "123 irbid",
+      "terms": true,
+      "cart": [],
+      "id": 28
+    },
+    {
+      "email": "sherazz@gmail.com",
+      "name": "sherazz",
+      "password": "12345678Sr",
+      "address": "123 irbid",
+      "terms": true,
+      "cart": [],
+      "id": 29
     }
   ]
 }

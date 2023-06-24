@@ -8,7 +8,7 @@ export default function UserInfoAction() {
   const address = myUser.address;
   return (
     <Paper
-    style={{marginTop:"3rem"}}
+    style={{marginTop:"8rem",marginBottom:"7.5rem"}}
       className="profile"
       radius="md"
       withBorder
@@ -33,10 +33,6 @@ export default function UserInfoAction() {
       <Text ta="center" c="dimmed" fz="sm">
         {address}
       </Text>
-
-      {/* <Button variant="default" fullWidth mt="md">
-        Edite
-      </Button> */}
     </Paper>
   );
 }

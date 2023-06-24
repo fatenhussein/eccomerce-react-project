@@ -54,7 +54,7 @@ export default function AuthenticationForm({
   useEffect(() => {}, []);
 
   return (
-    <Paper radius="md" p="xl" withBorder className="login">
+    <Paper radius="md" p="xl" withBorder className="login" >
       <Text size="lg" weight={500}>
         Welcome to Mantine, {type} with
       </Text>
