@@ -52,6 +52,7 @@ export default function Cards({ users, setUsers }) {
   };
 
   return (
+    <>
     <ScrollArea className="card" style={{height:"100vh"}}>
       <h1>cart</h1>
       <Table sx={{ minWidth: 800 }} verticalSpacing="sm">
@@ -105,22 +106,30 @@ export default function Cards({ users, setUsers }) {
         )}
 
         <tr>
-          <Link to="/checkout">
-          <Button
-            radius="md"
-            size="md"
-            style={{ backgroundColor: "#BC9470" }}
-            variant="gradient"
-            border="md"
-            gradient={{ from: "#bc9470", to: "beige" }}
-            onClick={togglePopup}
+
+          <td>
           
-          >
-            Checkout
-          </Button>
-          </Link>
+          </td>
         </tr>
       </Table>
+      
     </ScrollArea>
+    <Link to="/checkout" >
+    <div style={{marginTop:"0.5rem",marginLeft:"66rem",marginRight:"auto",textDecoration:"none"}}>
+      <Button
+        
+        radius="md"
+        size="md"
+        style={{ backgroundColor: "#BC9470"}}
+        variant="gradient"
+        border="md"
+        gradient={{ from: "#bc9470", to: "beige" }}
+        onClick={togglePopup}
+      >
+        Checkout
+      </Button>
+      </div>
+      </Link>
+      </>
   );
 }

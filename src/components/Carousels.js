@@ -86,6 +86,12 @@ const data = [
     title: "Vintage Wedding Dresses",
     category: "Coming Soon",
   },
+  {
+    image:
+      "https://i.pinimg.com/564x/d3/cd/f4/d3cdf4bab78c6eef60da09d5582ec116.jpg",
+    title: "Vintage Wedding Dresses",
+    category: "Coming Soon",
+  },
   
   
 ];

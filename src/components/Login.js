@@ -54,7 +54,8 @@ export default function AuthenticationForm({
   useEffect(() => {}, []);
 
   return (
-    <Paper radius="md" p="xl" withBorder className="login">
+    <div style={{height:"60vh"}}>
+    <Paper radius="md" p="xl" withBorder className="login" >
       <Text size="lg" weight={500}>
         Welcome to Mantine, {type} with
       </Text>
@@ -120,7 +121,7 @@ export default function AuthenticationForm({
           }
         })}
       >
-        <Stack>
+        <Stack >
           {type === "register" && (
             <TextInput
               label="Name"
@@ -204,5 +205,6 @@ export default function AuthenticationForm({
         </Group>
       </form>
     </Paper>
+    </div>
   );
 }
