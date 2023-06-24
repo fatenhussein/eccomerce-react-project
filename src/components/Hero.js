@@ -11,6 +11,8 @@ import {
   rem,
 } from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
+import { Link } from "react-router-dom";
+
 
 
 const useStyles = createStyles((theme) => ({
@@ -80,11 +82,13 @@ export default function HeroBullets() {
             </Text>
 
             <Group mt={30}>
+            <Link  to = "/products">
               <Button radius="md" size="md" style={{backgroundColor:"#BC9470"}} variant="gradient"
             border="md"
             gradient={{ from: '#bc9470', to: 'beige' }} >
                 Start shopping
               </Button>
+              </Link>
             </Group>
           </div>
           <Image src={"https://i.pinimg.com/564x/85/ca/f3/85caf3a77c431f7a722f6df9455c02d6.jpg"} className={classes.image} 

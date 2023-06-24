@@ -14,7 +14,7 @@ import {
 
 const useStyles = createStyles((theme) => ({
   footer: {
-    marginTop: rem(80),
+    marginTop:"8rem",
     paddingTop: `calc(${theme.spacing.sm} )`,
     paddingBottom: `calc(${theme.spacing.sm} )`,
     backgroundColor:"#e8ded4",

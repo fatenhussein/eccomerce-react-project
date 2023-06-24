@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../src/App.css";
 import { createStyles, Container, Text, Button, Group, rem } from '@mantine/core';
+import { Link } from "react-router-dom";
 
 
 const useStyles = createStyles((theme) => ({
@@ -83,6 +84,7 @@ export function HeroTitle() {
         </Text>
 
         <Group className={classes.controls}>
+        <Link  to = "/">
           <Button
             size="xl"
             className={classes.control}
@@ -92,6 +94,7 @@ export function HeroTitle() {
           >
             Get started
           </Button>
+          </Link>
         </Group>
       </Container>
     </div>
@@ -134,7 +137,7 @@ const developers = [
   },
   {
     image: 'https://avatars.githubusercontent.com/u/111297022?v=4',
-    name: 'Abdelrahman Risk',
+    name: 'Abedalrhman Rizk',
     description: 'Scrum Master - Facilitates agile development and removes obstacles in React projects.',
   },
   {

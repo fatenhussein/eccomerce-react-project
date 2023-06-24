@@ -7,6 +7,7 @@ export default function UserInfoAction() {
   const email = myUser.email;
   const address = myUser.address;
   return (
+    <div style={{height:"55vh"}}>
     <Paper
     style={{marginTop:"8rem",marginBottom:"7.5rem"}}
       className="profile"
@@ -34,5 +35,6 @@ export default function UserInfoAction() {
         {address}
       </Text>
     </Paper>
+    </div>
   );
 }

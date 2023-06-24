@@ -215,7 +215,7 @@ export default function Navbar({
           <Group position='center' grow pb='xl' px='md'>
             {/* <Button variant='default'>Log in</Button> */}
             <NavLink to='./login'>
-              <Button>Sign up</Button>
+              <Button  style={{backgroundColor:"#BC9470"}}>Sign up</Button>
             </NavLink>
             <NavLink className={classes.link} to='./card'>
               {/* <IconBasketFilled /> */}

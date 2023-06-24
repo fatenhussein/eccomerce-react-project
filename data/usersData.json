@@ -699,6 +699,48 @@
       "terms": true,
       "cart": [],
       "id": 29
+    },
+    {
+      "email": "joudy@gmail.com",
+      "name": "joudy",
+      "password": "12345678Sr",
+      "address": "1234 Irbid",
+      "terms": true,
+      "cart": [
+        {
+          "id": "1",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Classy vintage tea dress with a polka dot pattern and a flared skirt.",
+          "image": "https://i.pinimg.com/564x/4a/1f/64/4a1f6491110d394c2863d7c300330d71.jpg",
+          "quantity": 5
+        },
+        {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        },
+        {
+          "id": "3",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Charming vintage dress with a floral print ",
+          "image": "https://i.pinimg.com/564x/c6/4d/9f/c64d9f7fe5395337a74725929069f2a0.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "4",
+          "title": "Vintage dress",
+          "price": "79.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
+          "quantity": 2
+        }
+      ],
+      "id": 30
     }
   ]
 }
