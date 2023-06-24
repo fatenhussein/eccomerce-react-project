@@ -387,6 +387,14 @@
       "id": 14,
       "cart": [
         {
+          "id": "2",
+          "title": "Vintage dress",
+          "price": "99.99",
+          "description": "Elegant Victorian dress with lace detailing.",
+          "image": "https://i.pinimg.com/564x/ab/bc/3e/abbc3ec51dc494d15758167ebf9af51b.jpg",
+          "quantity": 3
+        },
+        {
           "id": "4",
           "title": "Vintage dress",
           "price": "79.99",
@@ -476,7 +484,6 @@
         }
       ]
     },
- 
     {
       "email": "sheraz.ayman@gmail.com",
       "name": "john",
@@ -663,16 +670,7 @@
       "password": "12345678Sr",
       "address": "1234 irbid",
       "terms": true,
-      "cart": [
-        {
-          "id": "4",
-          "title": "Vintage dress",
-          "price": "79.99",
-          "description": "Elegant Victorian dress with lace detailing.",
-          "image": "https://i.pinimg.com/564x/7c/29/75/7c2975999b77372ae4d4f79080ef7f82.jpg",
-          "quantity": 2
-        }
-      ],
+      "cart": [],
       "id": 26
     },
     {

@@ -64,6 +64,9 @@ export default function UserMenu({ setIsShowIcon }) {
                     <Text size="xs" color="dimmed">
                       {currentUser.email}
                     </Text>
+                    <Text size="xs" color="dimmed">
+                      {currentUser.address}
+                    </Text>
                   </div>
                 )}
               </Group>
@@ -76,22 +79,13 @@ export default function UserMenu({ setIsShowIcon }) {
 
           <Menu.Item
             icon={<IconLogout size="0.9rem" stroke={1.5} />}
-            onClick={
-           
-              () => {
+            onClick={() => {
+              localStorage.removeItem('currentUser')
 
-                  
-                localStorage.removeItem('currentUser')
+              navigate('/login')
 
-                navigate('/login')
-                  
-                setIsShowIcon(false)
-            
-                     
-              }
-           
-         
-            }
+              setIsShowIcon(false)
+            }}
           >
             Logout
           </Menu.Item>
