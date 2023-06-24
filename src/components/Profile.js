@@ -8,7 +8,7 @@ export default function UserInfoAction() {
   const address = myUser.address;
   return (
     <Paper
-    style={{marginTop:"3rem" }}
+      style={{ marginTop: "3rem" }}
       className="profile"
       radius="md"
       withBorder
