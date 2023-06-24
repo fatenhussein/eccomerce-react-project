@@ -18,6 +18,7 @@ import Profile from './components/Profile';
 import axios from 'axios';
 import ContactUs from './components/ContactUs';
 import AboutUs from "./components/AboutUs";
+import Checkout from "./components/Checkout"
 export default function App() {
   const [isShowIcon, setIsShowIcon] = useState(
     window.localStorage.getItem('isShowIcon')
@@ -88,6 +89,7 @@ export default function App() {
             <Route path='profile' element={<Profile />} />
             <Route path='AboutUs' element={<AboutUs />} />
 
+            <Route path='/checkout' element={<Checkout/>} />
             <Route path='card' element={<Card  users={users}/>} />
             <Route path='*' element={<NoPage />} />
           </Route>
