@@ -6,27 +6,31 @@ import {
   ActionIcon,
   Anchor,
   ScrollArea,
+  Button,
+  Portal,
+  Paper,
+  CloseButton,
 } from "@mantine/core";
 import { IconPencil, IconTrash } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 import Quantity from "./Quantity";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Cards({ users, setUsers }) {
   const [currentUser, setCurrentUser] = useState("");
 
-
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     setCurrentUser(JSON.parse(localStorage.getItem("currentUser")));
   }, []);
 
-  let arr =[];
+  let arr = [];
   useEffect(() => {
     axios
       .put(`http://localhost:3500/users/${currentUser.id}`, currentUser)
       .then((response) => {
-
         console.log(response.data);
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
       })
@@ -34,24 +38,21 @@ export default function Cards({ users, setUsers }) {
   }, [currentUser]);
 
   const deleteCart = (id) => {
-
     arr = currentUser.cart.filter((item) => item.id !== id);
 
     setCurrentUser({ ...currentUser, cart: arr });
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
-   setTimeout(function () {
-     window.location.reload()
-   }, 50)
+    setTimeout(function () {
+      window.location.reload();
+    }, 50);
+  };
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
   };
 
-
-  //   function deleteeee() {
-  // window.location.reload(false)
-  //   }
- 
   return (
-    <ScrollArea className="card">
+    <ScrollArea className="card" style={{height:"100vh"}}>
       <h1>cart</h1>
       <Table sx={{ minWidth: 800 }} verticalSpacing="sm">
         <thead>
@@ -102,6 +103,23 @@ export default function Cards({ users, setUsers }) {
         ) : (
           <h1></h1>
         )}
+
+        <tr>
+          <Link to="/checkout">
+          <Button
+            radius="md"
+            size="md"
+            style={{ backgroundColor: "#BC9470" }}
+            variant="gradient"
+            border="md"
+            gradient={{ from: "#bc9470", to: "beige" }}
+            onClick={togglePopup}
+          
+          >
+            Checkout
+          </Button>
+          </Link>
+        </tr>
       </Table>
     </ScrollArea>
   );

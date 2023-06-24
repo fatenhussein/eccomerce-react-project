@@ -109,11 +109,12 @@ export default function AuthenticationForm({
                 .then((response) => {
                   const users = response.data;
                   localStorage.setItem("users", JSON.stringify(users));
+                  localStorage.setItem("currentUser", JSON.stringify(response.data));
                 })
                 .catch((error) => {
                   console.error("An error occurred:", error.response.data);
                 });
-
+               
               navigate("/");
             }
           }
